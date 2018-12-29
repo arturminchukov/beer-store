@@ -6,7 +6,6 @@ import {Provider} from 'react-redux';
 import {rootReducer} from './reducers/index';
 import App from './components/App/App';
 
-
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 function middleware({dispatch, getState}) {
