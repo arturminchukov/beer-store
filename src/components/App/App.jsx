@@ -1,5 +1,10 @@
 import React, {Component} from 'react';
-import {BrowserRouter as Router, Route, Redirect} from 'react-router-dom';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Redirect,
+} from 'react-router-dom';
 import './App.css';
 import {MainPage} from '../MainPage/MainPage';
 import {FavoritesPage} from '../FavoritesPage/FavoritesPage';
@@ -10,12 +15,12 @@ class App extends Component {
     render() {
         return (
             <Router>
-                <React.Fragment>
-                    <Route path="/main" component={MainPage} />
-                    <Route path="/favorites" component={FavoritesPage} />
-                    <Route path="/details" component={DetailsPage} />
-                    <Redirect from="/" to="/main" />
-                </React.Fragment>
+                <Switch>
+                    <Route path='/home' component={MainPage} />
+                    <Route path='/favorites' component={FavoritesPage} />
+                    <Route path='/details' component={DetailsPage} />
+                    <Redirect from='/' to='/home' />
+                </Switch>
             </Router>
         );
     }

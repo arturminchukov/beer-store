@@ -53,6 +53,19 @@
             }
         ],
         "import/prefer-default-export": 0,
-        "no-underscore-dangle": 0
+        "no-underscore-dangle": 0,
+        "jsx-quotes": [
+            "error",
+            "prefer-single"
+        ],
+        "max-len": [
+            "error",
+            125
+        ],
+        "react/prop-types": 0,
+        "no-plusplus": 0,
+        "react/destructuring-assignment": 0,
+        "consistent-return": "off",
+        "global-require": "off"
     }
 }
