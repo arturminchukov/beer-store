@@ -1,0 +1,12 @@
+.MainPage__header {
+    position: fixed;
+    top: 0;
+}
+
+.MainPage__search-input {
+
+}
+
+.MainPage__content {
+    margin-top: 100px;
+}
