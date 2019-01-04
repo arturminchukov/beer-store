@@ -5,18 +5,29 @@ import './BeerItem.css';
 
 export class BeerItem extends React.Component {
     render() {
+        const favoritesClass = this.props.view === 'favorites' ? '_favorites' : '';
+
         return (
-            <div className='BeerItem'>
-                <BeerLogo />
-                <div className='BeerItem__info'>
-                    <h2 className='BeerItem__title'>BeerTitle</h2>
-                    <p className='BeerItem__tag-line'>non enim praesent elementum facilisis leo vel fringilla est
-                        ullamcorper eget nulla facilisi etiam
-                        dignissim diam quis enim lobortis scelerisque
+            <div className={`BeerItem${favoritesClass}`}>
+                <div className={`BeerItem__logo${favoritesClass}`}>
+                    <BeerLogo />
+                </div>
+                <div className={`BeerItem__info${favoritesClass}`}>
+                    <h2 className={`BeerItem__title${favoritesClass}`}>BeerTitle</h2>
+                    <p className={`BeerItem__tag-line${favoritesClass}`}>Deutch smell good dark-beer
                     </p>
-                    <div className='BeerItem__controls'>
-                        <BeerButton buttonName='open' />
-                        <BeerButton buttonName='favorite' />
+                    {favoritesClass && (
+                        <div className='BeerItem__desc_favorites'>
+                            non enim praesent elementum facilisis leo vel
+                            fringilla est ullamcorper eget nulla facilisi etiam dignissim diam quis enim lobortis
+                            scelerisque non enim praesent elementum facilisis leo vel
+                            fringilla est ullamcorper eget nulla facilisi etiam dignissim diam quis enim lobortis
+                            scelerisque
+                        </div>
+                    )}
+                    <div className={`BeerItem__controls${favoritesClass}`}>
+                        <BeerButton buttonName='open' view={this.props.view} />
+                        <BeerButton buttonName='favorite' view={this.props.view} />
                     </div>
                 </div>
             </div>

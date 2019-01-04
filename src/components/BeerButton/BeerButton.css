@@ -13,3 +13,7 @@
 .BeerButton:focus {
     outline: none;
 }
+
+.BeerButton_favorites:hover {
+    color: #8b8b8b;
+}

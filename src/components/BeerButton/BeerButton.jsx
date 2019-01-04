@@ -3,8 +3,9 @@ import './BeerButton.css';
 
 export function BeerButton(props) {
     const {buttonName} = props;
+    const extraClass = props.view ? 'BeerButton_favorites' : '';
 
     return (
-        <button className='BeerButton' type='button' name={buttonName}>{buttonName}</button>
+        <button className={`BeerButton ${extraClass}`} type='button' name={buttonName}>{buttonName}</button>
     );
 }
