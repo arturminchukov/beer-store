@@ -6,11 +6,9 @@ export class AdvancedFilter extends React.Component {
     constructor(props) {
         super(props);
 
-        const scales = Object.values(props.filterScales);
-
         this.state = {};
 
-        scales.forEach((scale) => {
+        props.filterScales.forEach((scale) => {
             this.state[scale.name] = scale.initValue;
         });
 
@@ -28,11 +26,9 @@ export class AdvancedFilter extends React.Component {
     }
 
     render() {
-        const scales = Object.values(this.props.filterScales);
-
         return (
             <div className='AdvancedFilter'>
-                {scales.map(scale => (
+                {this.props.filterScales.map(scale => (
                     <FilterSlider
                         value={this.state[scale.name]}
                         title={scale.title}
