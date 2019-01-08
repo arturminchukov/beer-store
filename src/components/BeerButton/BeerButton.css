@@ -1,0 +1,15 @@
+.BeerButton {
+    background: inherit;
+    border: none;
+    font-size: inherit;
+    color: inherit;
+    text-transform: uppercase;
+}
+
+.BeerButton:hover {
+    color: #ffffff;
+}
+
+.BeerButton:focus {
+    outline: none;
+}

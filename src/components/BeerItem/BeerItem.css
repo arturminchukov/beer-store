@@ -1,0 +1,64 @@
+.BeerItem__info {
+    background-color: #585858;
+    color: #e2e2e2;
+}
+
+.BeerItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.BeerItem__title {
+    padding: 10px 10px 0 10px;
+    margin-bottom: 0;
+    font-size: 1.8em;
+}
+
+.BeerItem__tag-line {
+    margin-top: 0;
+    font-size: 1em;
+    padding: 10px 10px 10px 10px;
+}
+
+.BeerItem__controls {
+    padding: 0 0 20px 10px;
+    font-size: 1.5em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;;
+}
+
+@media (min-width: 2048px) {
+    .BeerItem {
+        width: 17%;
+    }
+}
+
+
+@media (min-width: 1200px) and (max-width: 2047px) {
+    .BeerItem {
+        width: 22%;
+    }
+}
+
+
+@media (min-width: 768px) and (max-width: 1199px) {
+    .BeerItem {
+        width: 30%;
+    }
+}
+
+
+@media (max-width: 767px) {
+    .BeerItem {
+        width: 45%;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .BeerItem {
+        width: 90%;
+    }
+}

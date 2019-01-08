@@ -1,0 +1,23 @@
+.SearchInput {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.SearchInput__icon-search {
+    height: 50px;
+    width: 50px;
+}
+
+.SearchInput__input {
+    width: calc(80vw - 70px);
+    max-width: 1000px;
+    min-width: 100px;
+    border: 0;
+    border-bottom: 1px solid #282828;
+    font-size: 1.5rem;
+}
+
+.SearchInput__input:focus {
+    outline: 0;
+}

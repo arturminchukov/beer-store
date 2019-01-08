@@ -1,0 +1,63 @@
+.Header {
+    width: 100vw;
+    height: 50px;
+    background-color: #282bc4;
+}
+
+.Header__nav-button {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    margin-left: 20px;
+    background: inherit;
+    border: 0;
+}
+
+.Header__nav-button .Header__nav-button_stripe {
+    position: absolute;
+    left: 0;
+    top: 25px;
+}
+
+.Header__nav-button .Header__nav-button_stripe,
+.Header__nav-button .Header__nav-button_stripe:before,
+.Header__nav-button .Header__nav-button_stripe:after {
+    position: absolute;
+    display: block;
+    content: '';
+    height: 4px;
+    width: 100%;
+    background: white;
+    border-radius: 1px;
+    cursor: pointer;
+}
+
+.Header__nav-button .Header__nav-button_stripe:before {
+    top: -10px;
+}
+
+.Header__nav-button .Header__nav-button_stripe:after {
+    bottom: -10px;
+}
+
+.Header__onboard {
+    position: fixed;
+    left: 0;
+    top: 50px;
+    background-color: #282bc4;
+    height: calc(100vh - 50px);
+
+}
+
+.Header__onboard_visible {
+    width: 20vw;
+    visibility: visible;
+    transition: width 1s cubic-bezier(0.01, 0.43, 0.2, 0.68), visibility 0.4s cubic-bezier(0.76, 0.88, 1, 0.6);
+}
+
+.Header__onboard_hidden {
+    width: 0;
+    visibility: hidden;
+    transition: width 1s, visibility 0.4s cubic-bezier(0.76, 0.88, 1, 0.6);
+}
