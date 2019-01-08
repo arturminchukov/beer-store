@@ -1,0 +1,12 @@
+{
+    "home": {
+        "title": "Home",
+        "iconName": "home",
+        "url": "/home"
+    },
+    "favorites": {
+        "title": "Favorites",
+        "iconName": "favorites",
+        "url": "/favorites"
+    }
+}

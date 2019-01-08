@@ -2,27 +2,16 @@ import * as React from 'react';
 import {Link} from 'react-router-dom';
 import './NavLink.css';
 
-const ROUTES = {
-    favorites: {
-        title: 'Favorites',
-        icon: require('../../assets/icons/favorites.svg'),
-        url: '/favorites',
-    },
-    home: {
-        title: 'Home',
-        icon: require('../../assets/icons/home.svg'),
-        url: '/home',
-    },
-};
+function getIcon(iconName) {
+    return require(`../../assets/icons/${iconName}.svg`);
+}
 
-export function NavLink({routeName} = '') {
-    const route = ROUTES[routeName];
-
-    if (!route) {
+export function NavLink({url = '', title = '', iconName = ''}) {
+    if (!url || !title) {
         return;
     }
 
-    const {url, title, icon} = route;
+    const icon = getIcon(iconName);
 
     return (
         <div className='NavLink'>
