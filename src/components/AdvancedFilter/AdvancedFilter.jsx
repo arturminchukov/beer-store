@@ -1,35 +1,12 @@
 import * as React from 'react';
 import './AdvancedFilter.css';
-
-const FILTER_PROPERTY = {
-    alcohol: {
-        name: 'alcohol',
-        title: 'Alcohol by volume',
-        min: 2,
-        max: 14,
-        initValue: 8,
-    },
-    bitterness: {
-        name: 'bitterness',
-        title: 'International bitterness units',
-        min: 0,
-        max: 120,
-        initValue: 60,
-    },
-    color: {
-        name: 'color',
-        title: 'Color by EBC',
-        min: 4,
-        max: 80,
-        initValue: 42,
-    },
-};
+import {FilterSlider} from '../FilterSlider/FilterSlider';
 
 export class AdvancedFilter extends React.Component {
     constructor(props) {
         super(props);
 
-        const scales = Object.values(FILTER_PROPERTY);
+        const scales = Object.values(props.filterScales);
 
         this.state = {};
 
@@ -43,7 +20,7 @@ export class AdvancedFilter extends React.Component {
     updateRangeValue(event) {
         const {value, name} = event.currentTarget;
 
-        if (value || name || FILTER_PROPERTY[name]) {
+        if (value && name) {
             this.setState({
                 [name]: value,
             });
@@ -51,30 +28,20 @@ export class AdvancedFilter extends React.Component {
     }
 
     render() {
-        const scales = Object.values(FILTER_PROPERTY);
+        const scales = Object.values(this.props.filterScales);
 
         return (
             <div className='AdvancedFilter'>
-
                 {scales.map(scale => (
-                    <div className='AdvancedFilter__scale'>
-                        <div className='AdvancedFilter__title'>{scale.title}</div>
-                        <div className='AdvancedFilter__input'>
-                            <div className='AdvancedFilter__input-indicator'>{this.state[scale.name]}</div>
-                            <input
-                                onChange={this.handleChange}
-                                className='AdvancedFilter__input-range'
-                                name={scale.name}
-                                type='range'
-                                min={scale.min}
-                                max={scale.max}
-                                step='1'
-                                value={this.state[scale.name]}
-                            />
-                        </div>
-                    </div>
+                    <FilterSlider
+                        value={this.state[scale.name]}
+                        title={scale.title}
+                        handleChange={this.handleChange}
+                        name={scale.name}
+                        min={scale.min}
+                        max={scale.max}
+                    />
                 ))}
-
             </div>
         );
     }

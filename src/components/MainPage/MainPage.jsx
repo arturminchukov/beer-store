@@ -3,6 +3,8 @@ import {BeerList} from '../BeerList/BeerList';
 import {Header} from '../Header/Header';
 import {SearchInput} from '../SearchInput/SearchInput';
 import './MainPage.css';
+import {AdvancedFilter} from '../AdvancedFilter/AdvancedFilter';
+import filters from '../../dict/filterProperty';
 
 export class MainPage extends React.Component {
     render() {
@@ -16,6 +18,7 @@ export class MainPage extends React.Component {
                 </div>
                 <div className='MainPage__content'>
                     <SearchInput className='MainPage__search-input' />
+                    <AdvancedFilter filterScales={filters}/>
                     <BeerList beerItems={beerItems} />
                 </div>
             </div>
