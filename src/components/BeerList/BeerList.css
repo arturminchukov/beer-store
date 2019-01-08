@@ -1,12 +1,15 @@
 .BeerList {
     margin-top: 100px;
+
+}
+
+.BeerList_home {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-evenly;
 }
 
-.BeerList__favorites {
-    margin-top: 100px;
+.BeerList_favorites {
     display: flex;
     flex-direction: column;
     align-items: center;

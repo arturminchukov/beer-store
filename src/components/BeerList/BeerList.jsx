@@ -2,12 +2,12 @@ import * as React from 'react';
 import {BeerItem} from '../BeerItem/BeerItem';
 import './BeerList.css';
 
-export function BeerList({beerItems = [], view}) {
-    const beerListClass = view === 'favorites' ? 'BeerList__favorites' : 'BeerList';
+export function BeerList({beerItems = [], isMainView}) {
+    const extraListClass = isMainView ? 'BeerList_home' : 'BeerList_favorites';
 
     return (
-        <div className={beerListClass}>
-            {beerItems.map(beerItem => <BeerItem key={String(beerItem)} beerItem={beerItem} view={view} />)}
+        <div className={`BeerItem ${extraListClass}`}>
+            {beerItems.map(beerItem => <BeerItem key={String(beerItem)} beerItem={beerItem} isMainView={isMainView} />)}
         </div>
     );
 }
