@@ -10,7 +10,6 @@ import {MainPage} from '../MainPage/MainPage';
 import {FavoritesPage} from '../FavoritesPage/FavoritesPage';
 import {DetailsPage} from '../DetailsPage/DetailsPage';
 
-
 class App extends Component {
     render() {
         return (

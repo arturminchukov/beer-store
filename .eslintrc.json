@@ -67,6 +67,7 @@
         "react/destructuring-assignment": 0,
         "consistent-return": "off",
         "global-require": "off",
+        "block-spacing": "off",
         "import/no-dynamic-require": "off"
     }
 }

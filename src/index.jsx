@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './reset.css';
 import './index.css';
+import './input-range.css';
 import {applyMiddleware, compose, createStore} from 'redux';
 import {Provider} from 'react-redux';
 import {rootReducer} from './reducers/index';

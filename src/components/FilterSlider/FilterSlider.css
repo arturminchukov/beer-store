@@ -1,0 +1,34 @@
+.FilterSlider__scale {
+    width: 800px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.FilterSlider__input {
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.FilterSlider__input-indicator {
+    margin-right: 10px;
+}
+
+.FilterSlider__input-range {
+    width: 90%;
+    max-width: 400px;
+}
+
+@media (max-width: 868px) {
+    .AdvancedFilter__scale {
+        min-width: 200px;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
