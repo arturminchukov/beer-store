@@ -1,0 +1,116 @@
+.DetailsPage {
+    max-width: 1440px;
+    width: 50%;
+    min-width: 250px;
+    margin: auto;
+    padding: 10px 0 50px 0;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: auto;
+    grid-template-areas:
+            "about about about logo"
+            "properties properties pairing pairing"
+            "brewing brewing brewing brewing"
+            "ingredients ingredients method method"
+}
+
+.DetailsPage > * {
+    width: fit-content;
+    padding-top: 20px;
+}
+
+.DetailsPage__about {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 50px 0 20px 0;
+    width: 100%;
+    grid-area: about;
+}
+
+.DetailsPage__about_description {
+
+}
+
+.DetailsPage__about_title {
+    font-weight: bold;
+    font-size: 3rem;
+    padding-bottom: 5px;
+}
+
+.DetailsPage__tag-line {
+    color: #585858;
+    font-style: italic;
+    padding-bottom: 20px;
+}
+
+.DetailsPage__favorite-button {
+    padding: 10px;
+    color: #ffffff;
+    background-color: #1c4c84;
+    border: 0;
+    text-transform: uppercase;
+    font-size: 1rem;
+    width: fit-content;
+}
+
+.DetailsPage__favorite-button:active {
+    box-shadow: 0 0 2px 2px #6b92cb;
+}
+
+.DetailsPage__desc {
+    padding: 20px 20px 20px 0;
+}
+
+.DetailsPage__logo {
+    width: 250px;
+    height: 250px;
+    grid-area: logo;
+}
+
+.DetailsPage__brewing_title {
+    font-weight: bold;
+    font-size: 2rem;
+    padding-bottom: 20px;
+}
+
+.DetailsPage__properties {
+    grid-area: properties;
+}
+
+.DetailsPage__food-pairing {
+    grid-area: pairing;
+}
+
+.DetailsPage__brewing {
+    grid-area: brewing;
+}
+
+.DetailsPage__ingredients {
+    grid-area: ingredients;
+}
+
+.DetailsPage__method {
+    grid-area: method;
+}
+
+@media (max-width: 1248px) {
+    .DetailsPage {
+        width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .DetailsPage {
+        width: 90%;
+        grid-template-columns: 100%;
+        grid-template-areas:
+                "logo"
+                "about"
+                "properties"
+                "pairing"
+                "brewing"
+                "ingredients"
+                "method";
+    }
+}

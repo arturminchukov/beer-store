@@ -1,0 +1,9 @@
+.FoodPairing__food-pair {
+    padding: 15px 15px;
+}
+
+.FoodPairing__title {
+    font-weight: bold;
+    font-size: 2rem;
+    padding-bottom: 20px;
+}

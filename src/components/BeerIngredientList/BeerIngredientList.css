@@ -1,0 +1,24 @@
+.BeerIngredients__title {
+    font-weight: bold;
+    font-size: 2rem;
+    padding-bottom: 20px;
+}
+
+.BeerIngredients__ingredient_title {
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    padding-bottom: 10px;
+}
+
+.BeerIngredients__ingredient {
+    padding: 20px;
+}
+
+.BeerIngredients__ingredient:hover {
+    transform: scale(1.5);
+    transition: .5s;
+    transition-delay: .7s;
+    background-color: white;
+    box-shadow: 0 0 20px 3px #585858;
+}
