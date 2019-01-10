@@ -66,7 +66,7 @@ class DetailsPage extends React.Component {
                         <p className='DetailsPage__brewing_desc'>{beer.brewers_tips}</p>
                     </div>
                     <div className='DetailsPage__ingredients'>
-                        <BeerIngredientList ingredientTypes={ingredients} />
+                        <BeerIngredientList ingredientGroups={ingredients} />
                     </div>
                     <div className='DetailsPage__method'>
                         <BeerMethod

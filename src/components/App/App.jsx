@@ -7,10 +7,10 @@ import {
 } from 'react-router-dom';
 import history from '../../helper/history';
 import './App.css';
-import MainPage from '../MainPage/MainPage';
-import FavoritesPage from '../FavoritesPage/FavoritesPage';
 import DetailsPage from '../../containers/DetailsPage/DetailsPages';
 import parseUrl from '../../helper/parseUrl';
+import MainPage from '../../containers/MainPage/MainPage';
+import FavoritesPage from '../../containers/FavoritesPage/FavoritesPage';
 
 class App extends Component {
     componentDidMount() {

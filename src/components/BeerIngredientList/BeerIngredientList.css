@@ -13,12 +13,12 @@
 
 .BeerIngredients__ingredient {
     padding: 20px;
+    transition: .3s;
 }
 
 .BeerIngredients__ingredient:hover {
-    transform: scale(1.5);
-    transition: .5s;
-    transition-delay: .7s;
+    transform: scale(1.2);
+    transition-delay: .3s;
     background-color: white;
     box-shadow: 0 0 20px 3px #585858;
 }
