@@ -23,10 +23,11 @@ export class Header extends React.Component {
 
     render() {
         const onboardClass = this.state.isMenuVisible ? 'Header__onboard_visible' : 'Header__onboard_hidden';
+        const buttonClass = this.state.isMenuVisible ? 'Header__nav-button_active' : '';
 
         return (
             <div className='Header'>
-                <button type='button' className='Header__nav-button' onClick={this.handleClickMenu}>
+                <button type='button' className={`Header__nav-button ${buttonClass}`} onClick={this.handleClickMenu}>
                     <span className='Header__nav-button_stripe' />
                 </button>
                 <div className={`Header__onboard ${onboardClass}`}>
