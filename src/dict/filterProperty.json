@@ -1,6 +1,6 @@
 {
     "alcohol": {
-        "abbr": "abv",
+        "abbreviation": "abv",
         "name": "alcohol",
         "title": "Alcohol by volume",
         "min": 2,
@@ -8,7 +8,7 @@
         "initValue": 8
     },
     "bitterness": {
-        "abbr": "ibu",
+        "abbreviation": "ibu",
         "name": "bitterness",
         "title": "International bitterness units",
         "min": 0,
@@ -16,7 +16,7 @@
         "initValue": 60
     },
     "color": {
-        "abbr": "ebc",
+        "abbreviation": "ebc",
         "name": "color",
         "title": "Color by EBC",
         "min": 4,
