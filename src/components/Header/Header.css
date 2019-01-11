@@ -5,40 +5,84 @@
 }
 
 .Header__nav-button {
+    display: block;
     position: relative;
-    display: inline-block;
-    width: 50px;
-    height: 50px;
+    overflow: hidden;
+    padding: 0;
     margin-left: 20px;
-    background: inherit;
-    border: 0;
+    width: 54px;
+    height: 48px;
+    font-size: 0;
+    text-indent: -9999px;
+    box-shadow: none;
+    border-radius: 0;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+    background-color: #282bc4;
 }
 
-.Header__nav-button .Header__nav-button_stripe {
+.Header__nav-button:focus {
+    outline: none;
+}
+
+.Header__nav-button span {
+    display: block;
     position: absolute;
-    left: 0;
-    top: 25px;
+    top: 22px;
+    left: 10px;
+    right: 10px;
+    height: 6px;
+    background: white;
+    transition: background 0s 0.3s;
 }
 
-.Header__nav-button .Header__nav-button_stripe,
-.Header__nav-button .Header__nav-button_stripe:before,
-.Header__nav-button .Header__nav-button_stripe:after {
+.Header__nav-button span::before,
+.Header__nav-button span::after {
     position: absolute;
     display: block;
-    content: '';
-    height: 4px;
+    left: 0;
     width: 100%;
-    background: white;
-    border-radius: 1px;
-    cursor: pointer;
+    height: 6px;
+    background-color: #fff;
+    content: "";
+    transition-duration: 0.3s, 0.3s;
+    transition-delay: 0.3s, 0s;
 }
 
-.Header__nav-button .Header__nav-button_stripe:before {
-    top: -10px;
+.Header__nav-button span::before {
+    top: -12px;
+    transition-property: top, transform;
+
 }
 
-.Header__nav-button .Header__nav-button_stripe:after {
-    bottom: -10px;
+.Header__nav-button span::after {
+    bottom: -12px;
+    transition-property: bottom, transform;
+}
+
+.Header__nav-button_active {
+    background-color: #282bc4;
+}
+
+.Header__nav-button_active span {
+    background: none;
+    transition: 0s;
+}
+
+.Header__nav-button_active span::before {
+    top: 0;
+    transform: rotate(45deg);
+}
+
+.Header__nav-button_active span::after {
+    bottom: 0;
+    transform: rotate(-45deg);
+}
+
+.Header__nav-button_active span::before,
+.Header__nav-button_active span::after {
+    transition-delay: 0s, 0.3s;
 }
 
 .Header__onboard {
