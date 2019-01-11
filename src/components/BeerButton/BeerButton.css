@@ -14,6 +14,6 @@
     outline: none;
 }
 
-.BeerButton_favorites:hover {
+.FavoritesPage .BeerButton:hover {
     color: #8b8b8b;
 }

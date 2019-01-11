@@ -3,13 +3,13 @@
 
 }
 
-.BeerList_home {
+.MainPage .BeerList {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-evenly;
 }
 
-.BeerList_favorites {
+.FavoritesPage .BeerList {
     display: flex;
     flex-direction: column;
     align-items: center;

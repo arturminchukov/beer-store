@@ -3,6 +3,10 @@ import {BeerListPage} from '../BeerListPage/BeerListPage';
 
 export class MainPage extends React.Component {
     render() {
-        return <BeerListPage isMainView />;
+        return (
+            <div className='MainPage'>
+                <BeerListPage showSearchInput />
+            </div>
+        );
     }
 }

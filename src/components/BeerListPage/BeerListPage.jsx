@@ -14,8 +14,8 @@ export class BeerListPage extends React.Component {
                     <Header />
                 </div>
                 <div className='BeerListPage__content'>
-                    {this.props.isMainView && <SearchInput className='BeerListPage__search-input' />}
-                    <BeerList beerItems={beerItems} isMainView={this.props.isMainView}/>
+                    {this.props.showSearchInput && <SearchInput className='BeerListPage__search-input' />}
+                    <BeerList beerItems={beerItems} />
                 </div>
             </div>
         );

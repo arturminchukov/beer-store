@@ -3,6 +3,10 @@ import {BeerListPage} from '../BeerListPage/BeerListPage';
 
 export class FavoritesPage extends React.Component {
     render() {
-        return <BeerListPage view='favorites'/>;
+        return (
+            <div className='FavoritesPage'>
+                <BeerListPage />
+            </div>
+        );
     }
 }
