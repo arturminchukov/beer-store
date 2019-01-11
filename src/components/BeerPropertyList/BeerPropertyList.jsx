@@ -11,10 +11,10 @@ export function BeerPropertyList(props) {
             <h1 className='BeerProperties__title'>Properties</h1>
             {beerProperties && props && beerPropertiesList.map(beerProperty => (
                 <BeerProperty
-                    abbr={beerProperty.abbr}
+                    abbreviation={beerProperty.abbreviation}
                     title={beerProperty.title}
-                    value={props[beerProperty.abbr]}
-                    key={beerProperty.abbr}
+                    value={props[beerProperty.abbreviation]}
+                    key={beerProperty.abbreviation}
                 />
             ))}
         </div>
