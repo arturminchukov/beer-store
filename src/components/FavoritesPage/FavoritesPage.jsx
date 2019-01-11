@@ -1,7 +1,12 @@
 import * as React from 'react';
+import {BeerListPage} from '../BeerListPage/BeerListPage';
 
 export class FavoritesPage extends React.Component {
     render() {
-        return <p>FavoritesPage</p>;
+        return (
+            <div className='FavoritesPage'>
+                <BeerListPage />
+            </div>
+        );
     }
 }

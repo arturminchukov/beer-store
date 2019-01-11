@@ -1,64 +1,136 @@
-.BeerItem__info {
-    background-color: #585858;
-    color: #e2e2e2;
-}
-
-.BeerItem {
+.MainPage .BeerItem {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 50px;
 }
 
-.BeerItem__title {
+.MainPage .BeerItem__logo {
+    width: 200px;
+    height: 200px;
+}
+
+.MainPage .BeerItem__info {
+    background-color: #585858;
+    color: #e2e2e2;
+    width: 100%;
+}
+
+.MainPage .BeerItem__title {
     padding: 10px 10px 0 10px;
     margin-bottom: 0;
     font-size: 1.8em;
 }
 
-.BeerItem__tag-line {
+.MainPage .BeerItem__tag-line {
     margin-top: 0;
     font-size: 1em;
     padding: 10px 10px 10px 10px;
 }
 
-.BeerItem__controls {
-    padding: 0 0 20px 10px;
+.MainPage .BeerItem__controls {
+    padding: 30px 0 20px 0;
     font-size: 1.5em;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;;
 }
 
+
+/*Styles for favorites page*/
+.FavoritesPage .BeerItem {
+    width: 80vw;
+    max-width: 800px;
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0 2px 2px 0 #585858;
+    margin-bottom: 20px;
+    justify-content: space-between;
+}
+
+.FavoritesPage .BeerItem__logo {
+    order: 2;
+    width: 100%;
+    max-width: 250px;
+    min-width: 150px;
+}
+
+.FavoritesPage .BeerItem__info {
+    order: 1;
+}
+
+.FavoritesPage .BeerItem__title {
+    padding: 10px 10px 0 10px;
+    margin-bottom: 0;
+    font-size: 1.8em;
+}
+
+.FavoritesPage .BeerItem__tag-line {
+    margin-top: 0;
+    color: #686868;
+    font-size: 0.8em;
+    padding: 10px 10px 10px 10px;
+}
+
+.FavoritesPage .BeerItem__desc {
+    font-size: 0.8em;
+    padding: 10px 10px 10px 10px;
+}
+
+.FavoritesPage .BeerItem__controls {
+    padding: 0 0 20px 10px;
+    font-size: 1.5em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    color: #000000;
+}
+
+
 @media (min-width: 2048px) {
-    .BeerItem {
+    .MainPage .BeerItem {
         width: 17%;
     }
 }
 
-
 @media (min-width: 1200px) and (max-width: 2047px) {
-    .BeerItem {
+    .MainPage .BeerItem {
         width: 22%;
     }
 }
 
-
 @media (min-width: 768px) and (max-width: 1199px) {
-    .BeerItem {
+    .MainPage .BeerItem {
         width: 30%;
     }
 }
 
-
 @media (max-width: 767px) {
-    .BeerItem {
+    .MainPage .BeerItem {
         width: 45%;
     }
 }
 
-
 @media (max-width: 480px) {
-    .BeerItem {
+    .MainPage .BeerItem {
         width: 90%;
+    }
+
+
+    /*Styles for favorites page*/
+    .FavoritesPage .BeerItem {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+        align-items: center;
+    }
+
+    .FavoritesPage .BeerItem__logo {
+        order: 1;
+        width: 50%;
+    }
+
+    .FavoritesPage .BeerItem__info {
+        order: 2;
     }
 }
