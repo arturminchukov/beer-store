@@ -1,13 +1,19 @@
 import * as React from 'react';
-import {Link} from 'react-router-dom';
 import './NavLink.css';
 
 function getIcon(iconName) {
     return require(`../../assets/icons/${iconName}.svg`);
 }
 
-export default function NavLink({url = '', title = '', iconName = ''}) {
-    if (!url || !title) {
+export default function NavLink(props) {
+    const {
+        name,
+        title = '',
+        iconName = '',
+        onClick,
+    } = props;
+
+    if (!name || !title) {
         return;
     }
 
@@ -16,7 +22,7 @@ export default function NavLink({url = '', title = '', iconName = ''}) {
     return (
         <div className='NavLink'>
             <img className='NavLink__img' src={icon} alt={title} />
-            <Link className='NavLink__title' to={url}>{title}</Link>
+            <button type='button' className='NavLink__title' name={name} onClick={onClick}>{title}</button>
         </div>
     );
 }

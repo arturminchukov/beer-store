@@ -6,7 +6,7 @@ import './input-range.css';
 import {applyMiddleware, compose, createStore} from 'redux';
 import {Provider} from 'react-redux';
 import {rootReducer} from './reducers/index';
-import App from './components/App/App';
+import App from './containers/App/App';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 

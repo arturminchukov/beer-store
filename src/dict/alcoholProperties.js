@@ -25,4 +25,4 @@ export const alcoholProperties = {
     },
 };
 
-export const beerProperties = Object.keys(alcoholProperties);
+export const beerProperties = Object.values(alcoholProperties);

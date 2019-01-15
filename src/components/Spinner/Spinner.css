@@ -1,0 +1,64 @@
+.Spinner {
+    display: block;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    transform-origin: 63px 63px;
+    animation: spin 1s infinite linear;
+}
+
+.Spinner__circle {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-width: 0px 0px 26px 26px;
+    border-style: solid;
+    border-color: transparent;
+}
+
+.Spinner__circle_yellow {
+    border-left-color: #ffff99;
+}
+
+.Spinner__circle_orange {
+    border-left-color: #ffcc66;
+    transform: rotate(-45deg);
+}
+
+.Spinner__circle_red {
+    border-left-color: #ff9966;
+    transform: rotate(-90deg);
+}
+
+.Spinner__circle_pink {
+    border-left-color: #ff6699;
+    transform: rotate(-135deg);
+}
+
+.Spinner__circle_violet {
+    border-left-color: #cc66cc;
+    transform: rotate(-180deg);
+}
+
+.Spinner__circle_mauve {
+    border-left-color: #cc99cc;
+    transform: rotate(-225deg);
+}
+
+.Spinner__circle_light-yellow {
+    border-left-color: #fffad5;
+    transform: rotate(-270deg);
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-360deg);
+    }
+}

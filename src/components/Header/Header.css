@@ -19,7 +19,7 @@
     border: none;
     cursor: pointer;
     transition: background 0.3s;
-    background-color: #282bc4;
+    background-color: inherit;
 }
 
 .Header__nav-button:focus {
@@ -62,7 +62,8 @@
 }
 
 .Header__nav-button_active {
-    background-color: #282bc4;
+    background-color: inherit;
+    opacity: 0.9;
 }
 
 .Header__nav-button_active span {

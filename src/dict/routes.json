@@ -1,11 +1,13 @@
 {
     "home": {
         "title": "Home",
+        "name": "home",
         "iconName": "home",
         "url": "/home"
     },
     "favorites": {
         "title": "Favorites",
+        "name": "favorites",
         "iconName": "favorites",
         "url": "/favorites"
     }

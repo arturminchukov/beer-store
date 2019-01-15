@@ -3,10 +3,19 @@ import BeerList from '../BeerList/BeerList';
 import Header from '../Header/Header';
 import SearchInput from '../SearchInput/SearchInput';
 import './BeerListPage.css';
+import {InfiniteScroll} from '../InfiniteScroll/InfiniteScroll';
 
-export default class BeerListPage extends React.Component {
+class BeerListPage extends React.Component {
+    constructor(props) {
+        super(props);
+
+        if (props.beerItems.length < 10 && props.next && !props.showDescription) {
+            this.props.fetchNext();
+        }
+    }
+
     render() {
-        const beerItems = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+        const {beerItems, next} = this.props;
 
         return (
             <div className='BeerListPage'>
@@ -15,9 +24,13 @@ export default class BeerListPage extends React.Component {
                 </div>
                 <div className='BeerListPage__content'>
                     {this.props.showSearchInput && <SearchInput className='BeerListPage__search-input' />}
-                    <BeerList beerItems={beerItems} />
+                    <InfiniteScroll fetchNext={this.props.fetchNext} next={next}>
+                        <BeerList beerItems={beerItems} showDescription={this.props.showDescription} />
+                    </InfiniteScroll>
                 </div>
             </div>
         );
     }
 }
+
+export default BeerListPage;
