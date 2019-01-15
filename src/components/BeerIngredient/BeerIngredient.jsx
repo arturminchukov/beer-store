@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export function BeerIngredient(props) {
+export default function BeerIngredient(props) {
     const {
         name,
         amountValue,

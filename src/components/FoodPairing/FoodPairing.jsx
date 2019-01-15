@@ -1,8 +1,8 @@
 import * as React from 'react';
-import {InfoItemBox} from '../InfoItemBox/InfoItemBox';
+import InfoItemBox from '../InfoItemBox/InfoItemBox';
 import './FoodPairing.css';
 
-export function FoodPairing({foodPairing}) {
+export default function FoodPairing({foodPairing}) {
     return (
         <div className='FoodPairing'>
             <h1 className='FoodPairing__title'>Food Pairing</h1>

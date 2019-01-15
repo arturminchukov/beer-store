@@ -6,7 +6,7 @@ function getIcon(iconName) {
     return require(`../../assets/icons/${iconName}.svg`);
 }
 
-export function NavLink({url = '', title = '', iconName = ''}) {
+export default function NavLink({url = '', title = '', iconName = ''}) {
     if (!url || !title) {
         return;
     }

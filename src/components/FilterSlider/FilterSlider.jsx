@@ -1,7 +1,7 @@
 import * as React from 'react';
 import './FilterSlider.css';
 
-export function FilterSlider(props) {
+export default function FilterSlider(props) {
     const {
         title,
         value,

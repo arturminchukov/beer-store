@@ -1,20 +1,18 @@
 import * as React from 'react';
 import './BeerIngredientList.css';
-import {InfoItemBox} from '../InfoItemBox/InfoItemBox';
-import {IngredientType} from '../IngredientType/IngredientType';
+import InfoItemBox from '../InfoItemBox/InfoItemBox';
+import IngredientType from '../IngredientType/IngredientType';
 
-export function BeerIngredientList({ingredientTypes = {}}) {
-    const ingredientTypeNames = Object.keys(ingredientTypes);
-
+export default function BeerIngredientList({ingredientTypes = []}) {
     return (
         <div className='BeerIngredients'>
             <h1 className='BeerIngredients__title'>Ingredients</h1>
             <div>
-                {ingredientTypeNames.map(ingredientTypeName => (
-                    <InfoItemBox key={ingredientTypeName}>
+                {ingredientTypes.map(ingredientType => (
+                    <InfoItemBox key={ingredientType.name}>
                         <div className='BeerIngredients__ingredient'>
-                            <h1 className='BeerIngredients__ingredient_title'>{ingredientTypeName}</h1>
-                            <IngredientType ingredients={ingredientTypes[ingredientTypeName]} />
+                            <h1 className='BeerIngredients__ingredient_title'>{ingredientType.name}</h1>
+                            <IngredientType ingredients={ingredientType.ingredients} />
                         </div>
                     </InfoItemBox>
                 ))}

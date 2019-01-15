@@ -1,8 +1,8 @@
 import * as React from 'react';
 import './AdvancedFilter.css';
-import {FilterSlider} from '../FilterSlider/FilterSlider';
+import FilterSlider from '../FilterSlider/FilterSlider';
 
-export class AdvancedFilter extends React.Component {
+export default class AdvancedFilter extends React.Component {
     constructor(props) {
         super(props);
 

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import './BeerMethod.css';
 
-export function BeerMethod(props) {
+export default function BeerMethod(props) {
     const {mash, fermentation, twist} = props;
 
     return (

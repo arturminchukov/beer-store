@@ -1,8 +1,8 @@
 import * as React from 'react';
-import {NavLink} from '../NavLink/NavLink';
+import NavLink from '../NavLink/NavLink';
 import ROUTES from '../../dict/routes.json';
 
-export class MenuOnboard extends React.Component {
+export default class MenuOnboard extends React.Component {
     render() {
         const routes = Object.values(ROUTES);
 

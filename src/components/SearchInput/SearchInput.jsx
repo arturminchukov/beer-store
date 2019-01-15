@@ -2,7 +2,7 @@ import * as React from 'react';
 import searchLogo from '../../assets/icons/search.svg';
 import './SearchInput.css';
 
-export class SearchInput extends React.Component {
+export default class SearchInput extends React.Component {
     render() {
         return (
             <div className='SearchInput'>

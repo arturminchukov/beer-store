@@ -1,9 +1,9 @@
 import * as React from 'react';
 import infoIcon from '../../assets/icons/info.svg';
 import './BeerProperty.css';
-import {InfoItemBox} from '../InfoItemBox/InfoItemBox';
+import InfoItemBox from '../InfoItemBox/InfoItemBox';
 
-export function BeerProperty({abbreviation, title, value}) {
+export default function BeerProperty({abbreviation, title, value}) {
     return (
         <InfoItemBox>
             <div className='BeerProperty'>

@@ -1,13 +1,13 @@
 import * as React from 'react';
 import './DetailsPage.css';
-import {BeerLogo} from '../BeerLogo/BeerLogo';
-import {BeerMethod} from '../BeerMethod/BeerMethod';
-import {BeerIngredientList} from '../BeerIngredientList/BeerIngredientList';
-import {BeerPropertyList} from '../BeerPropertyList/BeerPropertyList';
-import {FoodPairing} from '../FoodPairing/FoodPairing';
-import {Header} from '../Header/Header';
+import BeerLogo from '../BeerLogo/BeerLogo';
+import BeerMethod from '../BeerMethod/BeerMethod';
+import BeerIngredientList from '../BeerIngredientList/BeerIngredientList';
+import BeerPropertyList from '../BeerPropertyList/BeerPropertyList';
+import FoodPairing from '../FoodPairing/FoodPairing';
+import Header from '../Header/Header';
 
-export class DetailsPage extends React.Component {
+export default class DetailsPage extends React.Component {
     render() {
         return (
             <React.Fragment>
