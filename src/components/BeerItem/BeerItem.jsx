@@ -2,7 +2,7 @@ import * as React from 'react';
 import BeerButton from '../BeerButton/BeerButton';
 import BeerLogo from '../BeerLogo/BeerLogo';
 import './BeerItem.css';
-import {navigate} from '../../helper/navigate';
+import navigate from '../../helper/navigation/navigate';
 
 class BeerItem extends React.Component {
     constructor(props) {

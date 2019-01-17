@@ -42,3 +42,20 @@ export function fetchFavoriteBeers(page, beersPerPage) {
         }
     };
 }
+
+export function fetchBeersByQuery(query) {
+    return async function (dispatch) {
+        dispatch(beerLoading(true));
+        try {
+            if (query) {
+                let beers = await api.getBeersByQuery(query);
+
+                dispatch(beerLoaded(beers));
+            }
+        } catch (e) {
+            console.error(e);
+        } finally {
+            dispatch(beerLoading(false));
+        }
+    };
+}

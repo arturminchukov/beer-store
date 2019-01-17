@@ -1,3 +1,4 @@
+import getValidQuery from './getValidQuery';
 import getStubFavoriteBeers from './getStubFavoriteBeers';
 
 const host = 'https://api.punkapi.com/v2/beers';
@@ -21,6 +22,12 @@ class Api {
 
     static async getFavoriteBeers(page, beersPerPage) {
         return getStubFavoriteBeers(page, beersPerPage);
+    }
+
+    static async getBeersByQuery(query) {
+        const validQuery = getValidQuery(query.text);
+
+        return this.requestResponse(`?beer_name=${validQuery}`);
     }
 }
 

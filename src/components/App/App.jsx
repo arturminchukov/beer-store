@@ -5,8 +5,6 @@ import {
     Route,
     Redirect,
 } from 'react-router-dom';
-import history from '../../helper/history';
-import DetailsPage from '../../containers/DetailsPage/DetailsPages';
 import {parseLocation} from '../../helper/parseUrl';
 import MainPage from '../../containers/MainPage/MainPage';
 import FavoritesPage from '../../containers/FavoritesPage/FavoritesPage';
@@ -15,6 +13,16 @@ class App extends Component {
     componentDidMount() {
         this.unlistenHistory = history.listen(() => {
             const route = parseLocation(window.location);
+            this.props.routeNavigate(route);
+
+            if (route.query) {
+                this.props.fetchBeersByQuery(route.query);
+            }
+
+            if (!route.query && this.props.next === 1) {
+                this.props.fetchBeers(this.props.next);
+            }
+
             this.props.routeNavigate(route);
         });
     }

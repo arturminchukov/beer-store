@@ -5,7 +5,7 @@ export const alcoholProperties = {
         title: 'Alcohol by volume',
         min: 2,
         max: 14,
-        initValue: 8,
+        initValue: 2,
     },
     bitterness: {
         abbreviation: 'ibu',
@@ -13,7 +13,7 @@ export const alcoholProperties = {
         title: 'International bitterness units',
         min: 0,
         max: 120,
-        initValue: 60,
+        initValue: 0,
     },
     color: {
         abbreviation: 'ebc',
@@ -21,7 +21,7 @@ export const alcoholProperties = {
         title: 'Color by EBC',
         min: 4,
         max: 80,
-        initValue: 42,
+        initValue: 4,
     },
 };
 

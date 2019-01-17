@@ -1,24 +1,33 @@
 import * as React from 'react';
 import './AdvancedFilter.css';
 import FilterSlider from '../FilterSlider/FilterSlider';
+import debounce from '../../helper/debounce';
+import queryNavigate from '../../helper/navigation/queryNavigate';
 
 export default class AdvancedFilter extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = {};
+        const state = {};
+        const {query} = props;
 
         props.filterScales.forEach((scale) => {
-            this.state[scale.name] = scale.initValue;
+            state[scale.abbreviation] = query && query[scale.abbreviation] ? query[scale.abbreviation] : scale.initValue;
         });
 
+        this.state = state;
         this.handleChange = this.updateRangeValue.bind(this);
+        this.debouncedQueryNavigate = debounce(queryNavigate, 700);
     }
 
     updateRangeValue(event) {
         const {value, name} = event.currentTarget;
 
         if (value && name) {
+            this.debouncedQueryNavigate({
+                [name]: value,
+            });
+
             this.setState({
                 [name]: value,
             });
@@ -30,10 +39,11 @@ export default class AdvancedFilter extends React.Component {
             <div className='AdvancedFilter'>
                 {this.props.filterScales.map(scale => (
                     <FilterSlider
-                        value={this.state[scale.name]}
+                        value={this.state[scale.abbreviation]}
+                        key={scale.title}
                         title={scale.title}
                         handleChange={this.handleChange}
-                        name={scale.name}
+                        name={scale.abbreviation}
                         min={scale.min}
                         max={scale.max}
                     />
