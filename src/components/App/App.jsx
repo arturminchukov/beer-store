@@ -6,9 +6,9 @@ import {
     Redirect,
 } from 'react-router-dom';
 import './App.css';
-import {MainPage} from '../MainPage/MainPage';
-import {FavoritesPage} from '../FavoritesPage/FavoritesPage';
-import {DetailsPage} from '../DetailsPage/DetailsPage';
+import MainPage from '../MainPage/MainPage';
+import FavoritesPage from '../FavoritesPage/FavoritesPage';
+import DetailsPage from '../DetailsPage/DetailsPage';
 
 class App extends Component {
     render() {

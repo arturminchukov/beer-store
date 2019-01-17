@@ -1,0 +1,11 @@
+.InfoItemBox {
+    box-shadow: 0 0 1px 0 #585858;
+}
+
+.InfoItemBox:first-child {
+    box-shadow: 0 -1px 1px 0 #585858;;
+}
+
+.InfoItemBox:last-child {
+    box-shadow: 0 1px 1px 0 #585858;;
+}

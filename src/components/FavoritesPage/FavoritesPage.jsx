@@ -1,7 +1,7 @@
 import * as React from 'react';
-import {BeerListPage} from '../BeerListPage/BeerListPage';
+import BeerListPage from '../BeerListPage/BeerListPage';
 
-export class FavoritesPage extends React.Component {
+export default class FavoritesPage extends React.Component {
     render() {
         return (
             <div className='FavoritesPage'>

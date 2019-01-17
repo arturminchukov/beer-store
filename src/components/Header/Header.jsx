@@ -1,8 +1,8 @@
 import * as React from 'react';
 import './Header.css';
-import {MenuOnboard} from '../MenuOnboard/MenuOnboard';
+import MenuOnboard from '../MenuOnboard/MenuOnboard';
 
-export class Header extends React.Component {
+export default class Header extends React.Component {
     constructor(props) {
         super(props);
 

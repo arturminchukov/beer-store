@@ -1,0 +1,19 @@
+.BeerMethod__title {
+    font-weight: bold;
+    font-size: 2rem;
+    padding: 20px 0 20px 10px;
+}
+
+.BeerMethod__property {
+    padding: 10px 0 10px 20px;
+}
+
+.BeerMethod__property_title {
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding-bottom: 10px;
+}
+
+.BeerMethod__property_desc {
+    padding-bottom: 5px;
+}

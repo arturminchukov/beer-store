@@ -1,9 +1,9 @@
 import * as React from 'react';
-import {BeerButton} from '../BeerButton/BeerButton';
-import {BeerLogo} from '../BeerLogo/BeerLogo';
+import BeerButton from '../BeerButton/BeerButton';
+import BeerLogo from '../BeerLogo/BeerLogo';
 import './BeerItem.css';
 
-export class BeerItem extends React.Component {
+export default class BeerItem extends React.Component {
     render() {
         return (
             <div className='BeerItem'>
