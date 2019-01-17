@@ -1,3 +1,5 @@
+import getValidQuery from './getValidQuery';
+
 const host = 'https://api.punkapi.com/v2/beers';
 
 class Api {
@@ -15,6 +17,12 @@ class Api {
 
     static async getBeer(id) {
         return this.requestResponse(`/${id}`);
+    }
+
+    static async getBeersByQuery(query) {
+        const validQuery = getValidQuery(query);
+
+        return this.requestResponse(`?beer_name=${validQuery}`);
     }
 }
 

@@ -1,7 +1,7 @@
 import Api from '../helper/api';
 import beerArrayToObject from '../helper/beerArrayToObject';
 import filterBeers from '../helper/filterBeers';
-import {beersLoaded} from './entities';
+import {beersPageLoaded} from './entities';
 
 function getBeersPerPage() {
     const width = window && window.screen && window.screen.width;
@@ -32,7 +32,7 @@ export default function fetchBeers() {
             beers = filterBeers(beers, currentBeers);
             beers = beerArrayToObject(beers);
 
-            dispatch(beersLoaded(beers, next));
+            dispatch(beersPageLoaded(beers, next));
         } catch (e) {
             console.error(e);
         }

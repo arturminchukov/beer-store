@@ -15,6 +15,27 @@ const route = (state, action) => {
                 ...state,
                 ...action.payload,
             };
+        case 'ROUTE_QUERY':
+            return {
+                ...state,
+                query: {
+                    ...state.query,
+                    text: action.payload.query,
+                },
+            };
+        case 'ROUTE_QUERY_PARAMS':
+            return {
+                ...state,
+                query: {
+                    ...state.query,
+                    ...action.payload.queryParams,
+                },
+            };
+        case 'ROUTE_QUERY_RESET':
+            return {
+                ...state,
+                query: null,
+            };
         default:
             return state;
     }

@@ -12,10 +12,15 @@ const entities = (state, action) => {
     }
 
     switch (action.type) {
-        case 'BEERS_LOADED':
+        case 'BEERS_PAGE_LOADED':
             return {
                 ...state,
                 next: action.payload.next,
+                home: {...state.home, ...action.payload.beers},
+            };
+        case 'BEER_LOADED':
+            return {
+                ...state,
                 home: {...state.home, ...action.payload.beers},
             };
         case 'FAVORITES_UPDATE':

@@ -1,18 +1,14 @@
 import Api from '../helper/api';
 import beerArrayToObject from '../helper/beerArrayToObject';
-import {beersLoaded} from './entities';
+import {beerLoaded} from './entities';
 
 export default function fetchBeer(beerId) {
-    return async function (dispatch, getState) {
+    return async function (dispatch) {
         try {
-            const state = getState();
-            const next = state && state.entities && state.entities.next;
-
             let beer = await Api.getBeer(beerId);
 
             beer = beerArrayToObject(beer);
-
-            dispatch(beersLoaded(beer, next));
+            dispatch(beerLoaded(beer));
         } catch (e) {
             console.error(e);
         }
