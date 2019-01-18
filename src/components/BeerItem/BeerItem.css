@@ -146,7 +146,7 @@
         height: 150px;
     }
 
-    .FavoritesPage .BeerItem__info {
+    .FavoritesPage .BeerItem__about {
         order: 2;
     }
 }
