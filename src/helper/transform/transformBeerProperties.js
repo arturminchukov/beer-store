@@ -1,4 +1,4 @@
-import {beerProperties} from '../dict/alcoholProperties';
+import {beerProperties} from '../../dict/alcoholProperties';
 
 export default function transformBeerProperties(beerPropertyValues) {
     return beerProperties.map((beerProperty, index) => ({

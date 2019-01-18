@@ -10,10 +10,6 @@ export class InfiniteScroll extends React.Component {
 
         this.onScroll = this.handleScroll.bind(this);
         this.scrollRef = React.createRef();
-
-        this.state = {
-            loading: false,
-        };
     }
 
     componentDidMount() {
@@ -25,11 +21,10 @@ export class InfiniteScroll extends React.Component {
         document.removeEventListener('scroll', this.onScroll);
     }
 
-
     handleScroll() {
         const container = this.scrollRef.current;
 
-        if (!container || this.state.loading || !this.props.next) {
+        if (!container || !this.props.next || this.props.isLoading) {
             return;
         }
 
@@ -44,13 +39,10 @@ export class InfiniteScroll extends React.Component {
     }
 
     async nextPage() {
-        this.setState({loading: true});
         try {
-            await this.props.fetchNext();
+            await this.props.fetchNext(this.props.next);
         } catch (error) {
             console.error(error);
-        } finally {
-            this.setState({loading: false});
         }
     }
 
@@ -58,7 +50,7 @@ export class InfiniteScroll extends React.Component {
         return (
             <div className='InfiniteScroll' ref={this.scrollRef}>
                 {this.props.children}
-                {this.state.loading && <div className='InfiniteScroll__spinner'><Spinner /></div>}
+                {this.props.isLoading && <div className='InfiniteScroll__spinner'><Spinner /></div>}
             </div>
         );
     }

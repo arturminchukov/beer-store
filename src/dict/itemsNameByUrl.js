@@ -1,11 +1,10 @@
 import ROUTES from './routes';
 
 const routes = Object.values(ROUTES);
-
-const urlToRoutes = {};
+const itemsNameByUrl = {};
 
 routes.forEach((route) => {
-    urlToRoutes[route.url] = route.name;
+    itemsNameByUrl[route.url] = route.items;
 });
 
-export default urlToRoutes;
+export default itemsNameByUrl;

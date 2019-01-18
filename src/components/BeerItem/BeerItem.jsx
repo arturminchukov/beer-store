@@ -34,9 +34,9 @@ class BeerItem extends React.Component {
     }
 
     handleFavoriteAction() {
-        const beerId = this.props && this.props.beer && this.props.beer.id;
+        const beer = this.props && this.props.beer;
 
-        this.props.favorite(beerId);
+        this.props.favorite(beer);
     }
 
     render() {

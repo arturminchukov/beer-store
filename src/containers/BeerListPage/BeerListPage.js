@@ -1,29 +1,30 @@
 import {connect} from 'react-redux';
 import BeerListPage from '../../components/BeerListPage/BeerListPage';
-import urlToRoutes from '../../dict/urlToRoutes';
+import urlToRoutes from '../../dict/itemsNameByUrl';
 import ROUTES from '../../dict/routes';
-import filterFavoriteBeers from '../../helper/filterFavoriteBeers';
-import fetchBeers from '../../actions/fetchBeers';
-
+import filterFavoriteBeers from '../../helper/filter/filterFavoriteBeers';
+import {fetchBeers} from '../../actions/fetching';
 
 const stateToProps = (state) => {
     const {entities} = state;
-    const routeName = urlToRoutes[state.route.path];
-    let beerItems = entities[routeName] ? Object.values(entities[routeName]) : [];
+    const itemsName = urlToRoutes[state.route.path];
 
-    if (routeName === ROUTES.home.name) {
-        beerItems = filterFavoriteBeers(beerItems, entities.favorites);
+    let beerItems = entities[itemsName].items ? Object.values(entities[itemsName].items) : [];
+
+    if (itemsName === ROUTES.home.items) {
+        beerItems = filterFavoriteBeers(beerItems, entities.favoriteBeers.items);
     }
 
     return {
         beerItems,
-        next: state.entities.next,
-        showDescription: routeName === ROUTES.favorites.name,
+        next: entities.beers.next,
+        isLoading: entities.beers.isLoading,
+        showDescription: itemsName === ROUTES.favorites.items,
     };
 };
 
 const mapDispatchToProps = dispatch => ({
-    fetchNext: () => dispatch(fetchBeers()),
+    fetchNext: nextPage => dispatch(fetchBeers(nextPage)),
 });
 
 export default connect(stateToProps, mapDispatchToProps)(BeerListPage);

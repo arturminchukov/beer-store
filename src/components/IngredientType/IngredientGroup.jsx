@@ -1,7 +1,7 @@
 import * as React from 'react';
 import BeerIngredient from '../BeerIngredient/BeerIngredient';
 
-export default function IngredientType({ingredients = []}) {
+export default function IngredientGroup({ingredients = []}) {
     if (ingredients && Array.isArray(ingredients)) {
         const validIngredients = ingredients.filter(el => el);
 

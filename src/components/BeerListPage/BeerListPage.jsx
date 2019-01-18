@@ -6,14 +6,6 @@ import './BeerListPage.css';
 import {InfiniteScroll} from '../InfiniteScroll/InfiniteScroll';
 
 class BeerListPage extends React.Component {
-    constructor(props) {
-        super(props);
-
-        if (props.beerItems.length < 10 && props.next && !props.showDescription) {
-            this.props.fetchNext();
-        }
-    }
-
     render() {
         const {beerItems, next} = this.props;
 
@@ -24,7 +16,11 @@ class BeerListPage extends React.Component {
                 </div>
                 <div className='BeerListPage__content'>
                     {this.props.showSearchInput && <SearchInput className='BeerListPage__search-input' />}
-                    <InfiniteScroll fetchNext={this.props.fetchNext} next={next}>
+                    <InfiniteScroll
+                        fetchNext={this.props.fetchNext}
+                        next={!this.props.showDescription && next}
+                        isLoading={this.props.isLoading}
+                    >
                         <BeerList beerItems={beerItems} showDescription={this.props.showDescription} />
                     </InfiniteScroll>
                 </div>

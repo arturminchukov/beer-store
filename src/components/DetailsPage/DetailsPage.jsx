@@ -5,11 +5,10 @@ import BeerIngredientList from '../BeerIngredientList/BeerIngredientList';
 import BeerPropertyList from '../BeerPropertyList/BeerPropertyList';
 import FoodPairing from '../FoodPairing/FoodPairing';
 import Header from '../Header/Header';
-import transformBeerProperties from '../../helper/transformBeerProperties';
-import transformBeerIngredients from '../../helper/transformBeerIngredients';
+import transformBeerProperties from '../../helper/transform/transformBeerProperties';
+import transformBeerIngredients from '../../helper/transform/transformBeerIngredients';
 import Spinner from '../Spinner/Spinner';
 import './DetailsPage.css';
-
 
 class DetailsPage extends React.Component {
     constructor(props) {
@@ -22,9 +21,8 @@ class DetailsPage extends React.Component {
         this.onClickFavorite = this.handleClick.bind(this);
     }
 
-
     handleClick() {
-        this.props.favorite(this.props.beerId);
+        this.props.favorite(this.props.beer);
     }
 
     render() {

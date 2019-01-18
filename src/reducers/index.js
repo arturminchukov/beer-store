@@ -1,8 +1,12 @@
 import {combineReducers} from 'redux';
-import entities from './entities';
 import route from './route';
+import favoriteBeers from './favoriteBeers';
+import beers from './beers';
 
 export const rootReducer = combineReducers({
-    entities,
+    entities: combineReducers({
+        favoriteBeers,
+        beers,
+    }),
     route,
 });

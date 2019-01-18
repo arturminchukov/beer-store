@@ -9,11 +9,11 @@ class Api {
         return data;
     }
 
-    static async getBeers(page, perPage) {
-        return this.requestResponse(`?page=${page}&per_page=${perPage}`);
+    static async getBeers(nextPage = 1, beersPerPage = 10) {
+        return this.requestResponse(`?page=${nextPage}&per_page=${beersPerPage}`);
     }
 
-    static async getBeer(id) {
+    static async getBeerById(id) {
         return this.requestResponse(`/${id}`);
     }
 }

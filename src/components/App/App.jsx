@@ -12,7 +12,6 @@ import FavoritesPage from '../FavoritesPage/FavoritesPage';
 import DetailsPage from '../../containers/DetailsPage/DetailsPages';
 import parseUrl from '../../helper/parseUrl';
 
-
 class App extends Component {
     componentDidMount() {
         this.unlistenHistory = history.listen((location) => {
