@@ -27,56 +27,57 @@ class DetailsPage extends React.Component {
 
     render() {
         const {beer} = this.props;
-        if (beer) {
-            const beerProperties = transformBeerProperties([beer.abv, beer.ibu, beer.ebc]);
-            const ingredients = transformBeerIngredients(beer.ingredients);
-            const {method} = beer;
-            const buttonName = beer.isFavorite ? 'remove from favorites' : 'add to favorites';
 
-            return (
-                <React.Fragment>
-                    <Header />
-                    <div className='DetailsPage'>
-                        <div className='DetailsPage__about'>
-                            <h1 className='DetailsPage__about_title'>{beer.name}</h1>
-                            <p className='DetailsPage__tag-line'>{beer.tagline}</p>
-                            <button
-                                type='button'
-                                className='DetailsPage__favorite-button'
-                                onClick={this.onClickFavorite}
-                            >
-                                {buttonName}
-                            </button>
-                            <div className='DetailsPage__desc'>{beer.description}
-                            </div>
-                        </div>
-                        <div className='DetailsPage__logo'><BeerLogo url={beer.image_url} /></div>
-                        <div className='DetailsPage__properties'>
-                            <BeerPropertyList beerProperties={beerProperties} />
-                        </div>
-                        <div className='DetailsPage__food-pairing'>
-                            <FoodPairing foodPairing={beer.food_pairing} />
-                        </div>
-                        <div className='DetailsPage__brewing'>
-                            <h1 className='DetailsPage__brewing_title'>Brewing</h1>
-                            <p className='DetailsPage__brewing_desc'>{beer.brewers_tips}</p>
-                        </div>
-                        <div className='DetailsPage__ingredients'>
-                            <BeerIngredientList ingredientTypes={ingredients} />
-                        </div>
-                        <div className='DetailsPage__method'>
-                            <BeerMethod
-                                mash={method.mash_temp}
-                                fermentation={method.fermentation}
-                                twist={method.twist}
-                            />
-                        </div>
-                    </div>
-                </React.Fragment>
-            );
+        if (!beer) {
+            return <div className='DetailsPage__spinner'><Spinner /></div>;
         }
 
-        return <div className='DetailsPage__spinner'><Spinner /></div>;
+        const beerProperties = transformBeerProperties([beer.abv, beer.ibu, beer.ebc]);
+        const ingredients = transformBeerIngredients(beer.ingredients);
+        const {method} = beer;
+        const buttonName = beer.isFavorite ? 'remove from favorites' : 'add to favorites';
+
+        return (
+            <React.Fragment>
+                <Header />
+                <div className='DetailsPage'>
+                    <div className='DetailsPage__about'>
+                        <h1 className='DetailsPage__about_title'>{beer.name}</h1>
+                        <p className='DetailsPage__tag-line'>{beer.tagline}</p>
+                        <button
+                            type='button'
+                            className='DetailsPage__favorite-button'
+                            onClick={this.onClickFavorite}
+                        >
+                            {buttonName}
+                        </button>
+                        <div className='DetailsPage__desc'>{beer.description}
+                        </div>
+                    </div>
+                    <div className='DetailsPage__logo'><BeerLogo url={beer.image_url} /></div>
+                    <div className='DetailsPage__properties'>
+                        <BeerPropertyList beerProperties={beerProperties} />
+                    </div>
+                    <div className='DetailsPage__food-pairing'>
+                        <FoodPairing foodPairing={beer.food_pairing} />
+                    </div>
+                    <div className='DetailsPage__brewing'>
+                        <h1 className='DetailsPage__brewing_title'>Brewing</h1>
+                        <p className='DetailsPage__brewing_desc'>{beer.brewers_tips}</p>
+                    </div>
+                    <div className='DetailsPage__ingredients'>
+                        <BeerIngredientList ingredientTypes={ingredients} />
+                    </div>
+                    <div className='DetailsPage__method'>
+                        <BeerMethod
+                            mash={method.mash_temp}
+                            fermentation={method.fermentation}
+                            twist={method.twist}
+                        />
+                    </div>
+                </div>
+            </React.Fragment>
+        );
     }
 }
 
