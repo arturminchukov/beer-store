@@ -19,7 +19,10 @@
     "rules": {
         "indent": [
             "error",
-            4
+            4,
+            {
+                "SwitchCase": 1
+            }
         ],
         "linebreak-style": [
             "error",
@@ -68,6 +71,9 @@
         "consistent-return": "off",
         "global-require": "off",
         "block-spacing": "off",
-        "import/no-dynamic-require": "off"
+        "import/no-dynamic-require": "off",
+        "prefer-const": "off",
+        "func-names": "off",
+        "class-methods-use-this": "off"
     }
 }

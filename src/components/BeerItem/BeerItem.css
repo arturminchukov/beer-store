@@ -1,3 +1,19 @@
+.BeerItem__controls {
+    padding: 0 0 20px 10px;
+    font-size: 1.5em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.BeerItem__controls :first-child {
+    padding-left: 25px;
+}
+
+.BeerItem__controls :last-child {
+    padding-right: 25px;
+}
+
 .MainPage .BeerItem {
     display: flex;
     flex-direction: column;
@@ -8,12 +24,19 @@
 .MainPage .BeerItem__logo {
     width: 200px;
     height: 200px;
+    display: flex;
+    justify-content: center;
 }
 
-.MainPage .BeerItem__info {
+.MainPage .BeerItem__about {
+    width: 100%;
     background-color: #585858;
     color: #e2e2e2;
-    width: 100%;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
 }
 
 .MainPage .BeerItem__title {
@@ -28,15 +51,6 @@
     padding: 10px 10px 10px 10px;
 }
 
-.MainPage .BeerItem__controls {
-    padding: 30px 0 20px 0;
-    font-size: 1.5em;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;;
-}
-
-
 /*Styles for favorites page*/
 .FavoritesPage .BeerItem {
     width: 80vw;
@@ -48,15 +62,23 @@
     justify-content: space-between;
 }
 
+.FavoritesPage .BeerItem__about {
+    width: 80%;
+    height: fit-content;
+}
+
 .FavoritesPage .BeerItem__logo {
     order: 2;
-    width: 100%;
-    max-width: 250px;
-    min-width: 150px;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 20%;
 }
 
 .FavoritesPage .BeerItem__info {
     order: 1;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 80%;
 }
 
 .FavoritesPage .BeerItem__title {
@@ -78,14 +100,8 @@
 }
 
 .FavoritesPage .BeerItem__controls {
-    padding: 0 0 20px 10px;
-    font-size: 1.5em;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
     color: #000000;
 }
-
 
 @media (min-width: 2048px) {
     .MainPage .BeerItem {
@@ -116,7 +132,6 @@
         width: 90%;
     }
 
-
     /*Styles for favorites page*/
     .FavoritesPage .BeerItem {
         display: flex;
@@ -127,10 +142,11 @@
 
     .FavoritesPage .BeerItem__logo {
         order: 1;
-        width: 50%;
+        width: 30%;
+        height: 150px;
     }
 
-    .FavoritesPage .BeerItem__info {
+    .FavoritesPage .BeerItem__about {
         order: 2;
     }
 }

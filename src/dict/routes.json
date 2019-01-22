@@ -1,12 +1,16 @@
 {
     "home": {
         "title": "Home",
+        "name": "home",
         "iconName": "home",
-        "url": "/home"
+        "url": "/home",
+        "items": "beers"
     },
     "favorites": {
         "title": "Favorites",
+        "name": "favorites",
         "iconName": "favorites",
-        "url": "/favorites"
+        "url": "/favorites",
+        "items": "favoriteBeers"
     }
 }

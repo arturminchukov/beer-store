@@ -19,7 +19,7 @@
     border: none;
     cursor: pointer;
     transition: background 0.3s;
-    background-color: #282bc4;
+    background-color: inherit;
 }
 
 .Header__nav-button:focus {
@@ -62,7 +62,8 @@
 }
 
 .Header__nav-button_active {
-    background-color: #282bc4;
+    background-color: inherit;
+    opacity: 0.9;
 }
 
 .Header__nav-button_active span {
@@ -95,13 +96,31 @@
 }
 
 .Header__onboard_visible {
-    width: 20vw;
+    width: 200px;
     visibility: visible;
-    transition: width 1s cubic-bezier(0.01, 0.43, 0.2, 0.68), visibility 0.4s cubic-bezier(0.76, 0.88, 1, 0.6);
+    transition: width 0.5s cubic-bezier(0.01, 0.43, 0.2, 0.68), visibility 0.2s cubic-bezier(0.76, 0.88, 1, 0.6);
 }
 
 .Header__onboard_hidden {
     width: 0;
     visibility: hidden;
-    transition: width 1s, visibility 0.4s cubic-bezier(0.76, 0.88, 1, 0.6);
+    transition: width 0.5s, visibility 0.2s cubic-bezier(0.76, 0.88, 1, 0.6);
+}
+
+
+@media (max-width: 600px) {
+    .Header__onboard {
+        height: 0;
+        width: 100vw;
+    }
+
+    .Header__onboard_visible {
+        height: 150px;
+        transition: height 0.5s cubic-bezier(0.01, 0.43, 0.2, 0.68), visibility 0.2s cubic-bezier(0.76, 0.88, 1, 0.6);
+    }
+
+    .Header__onboard_hidden {
+        height: 0;
+        transition: height 0.5s, visibility 0.2s cubic-bezier(0.76, 0.88, 1, 0.6);
+    }
 }
