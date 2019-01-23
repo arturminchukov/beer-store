@@ -1,6 +1,7 @@
 import api from '../helper/api';
 import {beerLoaded, beerLoading, updateNextPage} from './beers';
 import getBeersPerPage from '../helper/getBeersPerPage';
+import {favoritesLoaded} from './favoriteBeers';
 
 export function fetchBeerById(beerId) {
     return async function (dispatch) {
@@ -27,6 +28,17 @@ export function fetchBeers(nextPage) {
             console.error(e);
         } finally {
             dispatch(beerLoading(false));
+        }
+    };
+}
+
+export function fetchFavoriteBeers(page) {
+    return async function (dispatch) {
+        try {
+            const data = await api.getFavoriteBeers(page);
+            dispatch(favoritesLoaded(data));
+        } catch (e) {
+            console.error(e);
         }
     };
 }

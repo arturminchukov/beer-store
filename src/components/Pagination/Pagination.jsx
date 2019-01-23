@@ -1,19 +1,13 @@
 import * as React from 'react';
-import BeerList from '../BeerList/BeerList';
 import './Pagination.css';
-
-const BEERS_ON_PAGE = 5;
+import {BEERS_ON_PAGE} from '../../helper/getPageBeer';
 
 export class Pagination extends React.Component {
     constructor(props) {
         super(props);
 
-
         this.onClick = this.changePage.bind(this);
-
-        this.state = {
-            currentPage: 1,
-        };
+        this.pageNumber = 1;
     }
 
     generatePages(pageNumber) {
@@ -26,51 +20,29 @@ export class Pagination extends React.Component {
         return pages;
     }
 
-    filterByPage() {
-        const {beerItems} = this.props && this.props.beerListParams;
-        const begin = (this.state.currentPage - 1) * BEERS_ON_PAGE;
-        const end = begin + BEERS_ON_PAGE;
-
-        return beerItems.slice(begin, end);
-    }
-
     changePage(event) {
-        let action = event.currentTarget.name;
+        const {changePage, currentPage} = this.props;
+        const action = event.currentTarget.name;
+        let newPage = 1;
 
         if (action === 'previous') {
-            this.setState(prevState => ({
-                currentPage: prevState.currentPage > 1 ? prevState.currentPage - 1 : 1,
-            }));
-            return;
+            newPage = currentPage > 1 ? currentPage - 1 : 1;
+        } else if (action === 'next') {
+            newPage = currentPage < this.pageNumber ? currentPage + 1 : this.pageNumber;
+        } else if (Number(action)) {
+            newPage = Number(action);
         }
 
-        if (action === 'next') {
-            this.setState(prevState => ({
-                currentPage: prevState.currentPage < this.pageNumber ? prevState.currentPage + 1 : this.pageNumber,
-            }));
-            return;
-        }
-
-        const newPage = Number(action);
-
-        if (newPage) {
-            this.setState({
-                currentPage: newPage,
-            });
-        }
+        changePage(newPage);
     }
 
     render() {
-        const {showDescription, beerItems} = this.props && this.props.beerListParams;
-        const BeerListComponent = this.props.beerListComponent ? this.props.beerListComponent : BeerList;
-
-        const pageBeerItems = this.filterByPage();
-        this.pageNumber = Math.ceil(beerItems.length / BEERS_ON_PAGE);
+        const {beerCount, currentPage} = this.props;
+        this.pageNumber = Math.ceil(beerCount / BEERS_ON_PAGE);
         const pages = this.generatePages(this.pageNumber);
 
         return (
             <div className='Pagination'>
-                <BeerListComponent beerItems={pageBeerItems} showDescription={showDescription} />
                 <div className='Pagination__panel'>
                     <button
                         type='button'
@@ -85,7 +57,7 @@ export class Pagination extends React.Component {
                         <button
                             type='button'
                             className={
-                                `Pagination__button ${this.state.currentPage === page && 'Pagination__button_active'}`}
+                                `Pagination__button ${currentPage === page && 'Pagination__button_active'}`}
                             key={page}
                             name={page}
                             onClick={this.onClick}

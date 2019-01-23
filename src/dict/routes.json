@@ -10,7 +10,8 @@
         "title": "Favorites",
         "name": "favorites",
         "iconName": "favorites",
-        "url": "/favorites",
+        "url": "/favorites?page=1",
+        "sourceUrl": "/favorites",
         "items": "favoriteBeers"
     }
 }

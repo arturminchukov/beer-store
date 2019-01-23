@@ -1,3 +1,5 @@
+import getStubFavoriteBeers from './getStubFavoriteBeers';
+
 const host = 'https://api.punkapi.com/v2/beers';
 
 class Api {
@@ -15,6 +17,10 @@ class Api {
 
     static async getBeerById(id) {
         return this.requestResponse(`/${id}`);
+    }
+
+    static async getFavoriteBeers(page) {
+        return getStubFavoriteBeers(page);
     }
 }
 

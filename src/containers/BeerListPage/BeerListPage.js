@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import BeerListPage from '../../components/BeerListPage/BeerListPage';
+import HeaderWrapper from '../../components/HeaderWrapper/HeaderWrapper';
 import urlToRoutes from '../../dict/itemsNameByUrl';
 import ROUTES from '../../dict/routes';
 import filterFavoriteBeers from '../../helper/filter/filterFavoriteBeers';
@@ -27,4 +27,4 @@ const mapDispatchToProps = dispatch => ({
     fetchNext: nextPage => dispatch(fetchBeers(nextPage)),
 });
 
-export default connect(stateToProps, mapDispatchToProps)(BeerListPage);
+export default connect(stateToProps, mapDispatchToProps)(HeaderWrapper);

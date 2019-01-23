@@ -1,11 +1,5 @@
 .Pagination {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.Pagination__panel {
-    display: flex;
     height: 35px;
     justify-content: flex-start;
     width: 80vw;
