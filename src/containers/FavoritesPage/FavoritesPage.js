@@ -18,7 +18,7 @@ const stateToProps = (state) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-    fetchFavoritesBeers: page => dispatch(fetchFavoriteBeers(page)),
+    fetchFavoritesBeers: (page, beersPerPage) => dispatch(fetchFavoriteBeers(page, beersPerPage)),
 });
 
 export default connect(stateToProps, mapDispatchToProps)(FavoritesPage);

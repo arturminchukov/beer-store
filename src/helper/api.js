@@ -19,8 +19,8 @@ class Api {
         return this.requestResponse(`/${id}`);
     }
 
-    static async getFavoriteBeers(page) {
-        return getStubFavoriteBeers(page);
+    static async getFavoriteBeers(page, beersPerPage) {
+        return getStubFavoriteBeers(page, beersPerPage);
     }
 }
 

@@ -32,10 +32,10 @@ export function fetchBeers(nextPage) {
     };
 }
 
-export function fetchFavoriteBeers(page) {
+export function fetchFavoriteBeers(page, beersPerPage) {
     return async function (dispatch) {
         try {
-            const data = await api.getFavoriteBeers(page);
+            const data = await api.getFavoriteBeers(page, beersPerPage);
             dispatch(favoritesLoaded(data));
         } catch (e) {
             console.error(e);

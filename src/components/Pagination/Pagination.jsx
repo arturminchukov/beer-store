@@ -1,22 +1,16 @@
 import * as React from 'react';
 import './Pagination.css';
-import {BEERS_ON_PAGE} from '../../helper/getPageBeer';
 
 export class Pagination extends React.Component {
     constructor(props) {
         super(props);
 
-        this.onClick = this.changePage.bind(this);
+        this.changePage = this.changePage.bind(this);
         this.pageNumber = 1;
     }
 
     generatePages(pageNumber) {
-        const pages = [];
-
-        for (let i = 0; i < pageNumber; i++) {
-            pages.push(i + 1);
-        }
-
+        const pages = Array.from({length: pageNumber}, (x, i) => i + 1);
         return pages;
     }
 
@@ -37,8 +31,8 @@ export class Pagination extends React.Component {
     }
 
     render() {
-        const {beerCount, currentPage} = this.props;
-        this.pageNumber = Math.ceil(beerCount / BEERS_ON_PAGE);
+        const {itemsCount, itemsPerPage, currentPage} = this.props;
+        this.pageNumber = Math.ceil(itemsCount / itemsPerPage);
         const pages = this.generatePages(this.pageNumber);
 
         return (
@@ -48,7 +42,7 @@ export class Pagination extends React.Component {
                         type='button'
                         className='Pagination__button'
                         name='previous'
-                        onClick={this.onClick}
+                        onClick={this.changePage}
                     >
                         {'<<'}
                     </button>
@@ -60,7 +54,7 @@ export class Pagination extends React.Component {
                                 `Pagination__button ${currentPage === page && 'Pagination__button_active'}`}
                             key={page}
                             name={page}
-                            onClick={this.onClick}
+                            onClick={this.changePage}
                         >
                             {page}
                         </button>
@@ -70,7 +64,7 @@ export class Pagination extends React.Component {
                         type='button'
                         className='Pagination__button'
                         name='next'
-                        onClick={this.onClick}
+                        onClick={this.changePage}
                     >
                         {'>>'}
                     </button>

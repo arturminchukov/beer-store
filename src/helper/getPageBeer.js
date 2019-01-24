@@ -1,8 +1,6 @@
-export const BEERS_ON_PAGE = 10;
-
-export function getPageBeer(beers, page) {
-    const begin = (page - 1) * BEERS_ON_PAGE;
-    const end = begin + BEERS_ON_PAGE;
+export function getPageBeer(beers, page, beersPerPage) {
+    const begin = (page - 1) * beersPerPage;
+    const end = begin + beersPerPage;
 
     return beers.slice(begin, end);
 }

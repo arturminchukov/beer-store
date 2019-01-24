@@ -1,6 +1,5 @@
 .BeerList {
     margin-top: 100px;
-
 }
 
 .MainPage .BeerList {
@@ -12,4 +11,12 @@
 .FavoritesPage .BeerList {
     display: flex;
     flex-direction: column;
+}
+
+.BeerList__fallback {
+    font-size: 2rem;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
