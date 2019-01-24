@@ -2,7 +2,7 @@ import * as React from 'react';
 import {Pagination} from '../Pagination/Pagination';
 import BeerList from '../BeerList/BeerList';
 import HeaderWrapper from '../HeaderWrapper/HeaderWrapper';
-import {favoriteNavigate} from '../../helper/navigate';
+import {favoriteNavigate} from '../../helper/navigation/navigate';
 
 const BEERS_PER_PAGE = 10;
 

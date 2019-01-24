@@ -1,4 +1,6 @@
-export default function debounce(handler, waitTime) {
+import {queryNavigate} from './navigation/navigate';
+
+export function debounce(handler, waitTime) {
     let timer;
 
     return function (parameters) {
@@ -9,3 +11,7 @@ export default function debounce(handler, waitTime) {
         timer = setTimeout(handler, waitTime, parameters);
     };
 }
+
+const debouncedQueryNavigate = debounce(queryNavigate, 700);
+
+export default debouncedQueryNavigate;

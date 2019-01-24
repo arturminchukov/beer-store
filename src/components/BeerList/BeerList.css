@@ -15,7 +15,7 @@
 
 .BeerList__fallback {
     font-size: 2rem;
-    height: 80vh;
+    margin-top: 20vh;
     display: flex;
     justify-content: center;
     align-items: center;

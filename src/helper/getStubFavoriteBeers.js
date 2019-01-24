@@ -1,5 +1,11 @@
 import {getFavoritesFromStorage} from './localStorage';
-import {getPageBeer} from './getPageBeer';
+
+function getPageBeer(beers, page, beersPerPage) {
+    const begin = (page - 1) * beersPerPage;
+    const end = begin + beersPerPage;
+
+    return beers.slice(begin, end);
+}
 
 function generateData(page, beersPerPage) {
     let data = getFavoritesFromStorage();

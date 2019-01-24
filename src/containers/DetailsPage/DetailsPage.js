@@ -2,8 +2,8 @@ import {connect} from 'react-redux';
 import DetailsPage from '../../components/DetailsPage/DetailsPage';
 import {fetchBeerById} from '../../actions/fetching';
 import {favoritesUpdate} from '../../actions/favoriteBeers';
-import {checkFavorite} from '../../helper/checkFavorite';
 import getBeerIdFromState from '../../helper/getBeerIdFromState';
+import {checkFavorite} from '../../helper/filters';
 
 const stateToProps = (state) => {
     const beerId = getBeerIdFromState(state);

@@ -1,4 +1,8 @@
-export default function filterBeersByQuery(beers, query) {
+export function filterBeers(newBeer, prevBeer = {}) {
+    return newBeer.filter(beer => !prevBeer[beer.id]);
+}
+
+export function filterBeersByQuery(beers, query) {
     if (!query) {
         return true;
     }
@@ -18,4 +22,19 @@ export default function filterBeersByQuery(beers, query) {
         return isValidBeerproperties && queryText.reduce((isQueryBeer, queryEl) => isQueryBeer
             && (beerName.includes(queryEl) || beerTagline.includes(queryEl)), true);
     });
+}
+
+export function checkFavorite(beer, favorites) {
+    if (favorites[beer.id]) {
+        return {
+            ...beer,
+            isFavorite: true,
+        };
+    }
+
+    return beer;
+}
+
+export function filterFavoriteBeers(beers, favorites) {
+    return beers.map(beer => checkFavorite(beer, favorites));
 }

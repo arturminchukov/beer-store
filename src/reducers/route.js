@@ -1,4 +1,4 @@
-import {parseLocation} from '../helper/parseUrl';
+import {parseLocation} from '../helper/parse';
 import {ROUTE_NAVIGATE} from '../actions/route';
 
 const DEFAULT_ROUTE = parseLocation(window.location);

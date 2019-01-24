@@ -1,8 +1,7 @@
 import * as React from 'react';
 import './AdvancedFilter.css';
 import FilterSlider from '../FilterSlider/FilterSlider';
-import debounce from '../../helper/debounce';
-import queryNavigate from '../../helper/navigation/queryNavigate';
+import debouncedQueryNavigate from '../../helper/debounce';
 
 export default class AdvancedFilter extends React.Component {
     constructor(props) {
@@ -17,14 +16,13 @@ export default class AdvancedFilter extends React.Component {
 
         this.state = state;
         this.handleChange = this.updateRangeValue.bind(this);
-        this.debouncedQueryNavigate = debounce(queryNavigate, 700);
     }
 
     updateRangeValue(event) {
         const {value, name} = event.currentTarget;
 
         if (value && name) {
-            this.debouncedQueryNavigate({
+            debouncedQueryNavigate({
                 [name]: value,
             });
 
