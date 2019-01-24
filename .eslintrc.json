@@ -74,6 +74,13 @@
         "import/no-dynamic-require": "off",
         "prefer-const": "off",
         "func-names": "off",
-        "class-methods-use-this": "off"
+        "class-methods-use-this": "off",
+        "prefer-destructuring": [
+            "error",
+            {
+                "array": false,
+                "object": true
+            }
+        ]
     }
 }

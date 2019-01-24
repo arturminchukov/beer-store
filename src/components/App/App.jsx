@@ -6,17 +6,16 @@ import {
     Redirect,
 } from 'react-router-dom';
 import history from '../../helper/history';
-import './App.css';
-import MainPage from '../MainPage/MainPage';
-import FavoritesPage from '../FavoritesPage/FavoritesPage';
 import DetailsPage from '../../containers/DetailsPage/DetailsPages';
-import parseUrl from '../../helper/parseUrl';
+import {parseLocation} from '../../helper/parseUrl';
+import MainPage from '../../containers/MainPage/MainPage';
+import FavoritesPage from '../../containers/FavoritesPage/FavoritesPage';
 
 class App extends Component {
     componentDidMount() {
-        this.unlistenHistory = history.listen((location) => {
-            const route = parseUrl(location.pathname);
-            this.props.routeNavigate(route.path, route.parameters);
+        this.unlistenHistory = history.listen(() => {
+            const route = parseLocation(window.location);
+            this.props.routeNavigate(route);
         });
     }
 
@@ -29,8 +28,8 @@ class App extends Component {
             <Router history={history}>
                 <Switch>
                     <Route path='/home' component={MainPage} />
-                    <Route path='/favorites' component={FavoritesPage} />
                     <Route path='/beer/:beerId' component={DetailsPage} />
+                    <Route path='/favorites' component={FavoritesPage} />
                     <Redirect from='/' to='/home' />
                 </Switch>
             </Router>

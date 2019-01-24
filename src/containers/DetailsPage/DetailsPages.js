@@ -3,9 +3,10 @@ import DetailsPage from '../../components/DetailsPage/DetailsPage';
 import {fetchBeerById} from '../../actions/fetching';
 import {favoritesUpdate} from '../../actions/favoriteBeers';
 import {checkFavorite} from '../../helper/checkFavorite';
+import getBeerIdFromState from '../../helper/getBeerIdFromState';
 
 const stateToProps = (state) => {
-    const beerId = state && state.route && state.route.parameters && state.route.parameters.beerId;
+    const beerId = getBeerIdFromState(state);
     let beer = state && state.entities && state.entities.beers && state.entities.beers.items[beerId];
 
     if (beer) {

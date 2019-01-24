@@ -1,9 +1,7 @@
-import parseUrl from '../helper/parseUrl';
+import {parseLocation} from '../helper/parseUrl';
 import {ROUTE_NAVIGATE} from '../actions/route';
 
-const url = window && window.location && window.location.pathname;
-
-const DEFAULT_ROUTE = parseUrl(url);
+const DEFAULT_ROUTE = parseLocation(window.location);
 
 const route = (state, action) => {
     if (!state) {
@@ -12,10 +10,7 @@ const route = (state, action) => {
 
     switch (action.type) {
         case ROUTE_NAVIGATE:
-            return {
-                ...state,
-                ...action.payload,
-            };
+            return {...action.payload.route};
         default:
             return state;
     }

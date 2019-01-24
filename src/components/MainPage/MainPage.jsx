@@ -1,11 +1,30 @@
 import * as React from 'react';
-import BeerListPage from '../../containers/BeerListPage/BeerListPage';
+import SearchInput from '../SearchInput/SearchInput';
+import {InfiniteScroll} from '../InfiniteScroll/InfiniteScroll';
+import BeerList from '../BeerList/BeerList';
+import HeaderWrapper from '../HeaderWrapper/HeaderWrapper';
 
 export default class MainPage extends React.Component {
     render() {
+        const {
+            fetchNext,
+            next,
+            isLoading,
+            beerItems,
+        } = this.props;
+
         return (
             <div className='MainPage'>
-                <BeerListPage showSearchInput />
+                <HeaderWrapper showSearchInput>
+                    <SearchInput />
+                    <InfiniteScroll
+                        fetchNext={fetchNext}
+                        next={next}
+                        isLoading={isLoading}
+                    >
+                        <BeerList beerItems={beerItems} showDescription={false} />
+                    </InfiniteScroll>
+                </HeaderWrapper>
             </div>
         );
     }

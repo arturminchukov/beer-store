@@ -1,8 +1,10 @@
-import {getFavoritesFromStorage, updateFavoritesStorage} from '../helper/localStorage';
-import {FAVORITES_UPDATE} from '../actions/favoriteBeers';
+import {updateFavoritesStorage} from '../helper/localStorage';
+import {FAVORITES_LOADED, FAVORITES_UPDATE} from '../actions/favoriteBeers';
+import beerArrayToObject from '../helper/transform/beerArrayToObject';
 
 const DEFAULT_ENTITIES = {
-    items: getFavoritesFromStorage() || {},
+    items: {},
+    countBeer: 0,
 };
 
 const favoriteBeers = (state, action) => {
@@ -31,6 +33,16 @@ const favoriteBeers = (state, action) => {
                 items: beers,
             };
         }
+
+        case FAVORITES_LOADED: {
+            const items = beerArrayToObject(action.payload.items);
+
+            return {
+                items,
+                countBeer: action.payload.countBeer,
+            };
+        }
+
         default:
             return state;
     }
