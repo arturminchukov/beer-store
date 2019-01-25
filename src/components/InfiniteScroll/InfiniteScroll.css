@@ -1,5 +1,9 @@
-.InfiniteScroll__spinner{
+.InfiniteScroll__spinner {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.InfiniteScroll {
+    width: 100%;
 }

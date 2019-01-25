@@ -31,6 +31,10 @@ export function parseLocation(location) {
     };
 }
 
+export function getSearchQuery(searchUrl) {
+    return parseLocation(searchUrl).params;
+}
+
 export function parseUrl(url) {
     const a = document.createElement('a');
     a.href = url;

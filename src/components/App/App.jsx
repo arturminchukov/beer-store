@@ -5,16 +5,26 @@ import {
     Route,
     Redirect,
 } from 'react-router-dom';
-import history from '../../helper/history';
-import DetailsPage from '../../containers/DetailsPage/DetailsPages';
-import {parseLocation} from '../../helper/parseUrl';
+import {parseLocation} from '../../helper/parse';
 import MainPage from '../../containers/MainPage/MainPage';
 import FavoritesPage from '../../containers/FavoritesPage/FavoritesPage';
+import DetailsPage from '../../containers/DetailsPage/DetailsPage';
+import history from '../../helper/navigation/history';
+import ROUTES from '../../dict/routes';
 
 class App extends Component {
     componentDidMount() {
         this.unlistenHistory = history.listen(() => {
             const route = parseLocation(window.location);
+
+            if (route.path && route.path === ROUTES.home.url) {
+                this.props.fetchBeersByQuery(route.params);
+            }
+
+            if (!route.params.text && this.props.next === 1) {
+                this.props.fetchBeers(this.props.next);
+            }
+
             this.props.routeNavigate(route);
         });
     }

@@ -1,6 +1,6 @@
 import {BEER_LOADING, BEERS_LOADED, BEERS_NEXT} from '../actions/beers';
-import filterBeers from '../helper/filter/filterBeers';
 import beerArrayToObject from '../helper/transform/beerArrayToObject';
+import {filterBeers} from '../helper/filters';
 
 const DEFAULT_ENTITIES = {
     isLoading: false,

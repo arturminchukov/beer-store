@@ -1,6 +1,6 @@
 import * as React from 'react';
 import './Header.css';
-import MenuOnboard from '../../containers/MenuOnboard/MenuOnboard';
+import MenuOnboard from '../MenuOnboard/MenuOnboard';
 
 export default class Header extends React.Component {
     constructor(props) {

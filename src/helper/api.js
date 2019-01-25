@@ -22,6 +22,10 @@ class Api {
     static async getFavoriteBeers(page, beersPerPage) {
         return getStubFavoriteBeers(page, beersPerPage);
     }
+
+    static async getBeersByQuery(query) {
+        return this.requestResponse(`?beer_name=${encodeURIComponent(query.text)}`);
+    }
 }
 
 export default Api;

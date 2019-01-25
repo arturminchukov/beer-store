@@ -11,7 +11,7 @@ export default function IngredientGroup({ingredients = []}) {
                 amountValue={ingredient.amount && ingredient.amount.value}
                 amountUnit={ingredient.amount && ingredient.amount.unit}
                 processStage={ingredient.add}
-                key={`${ingredient.name} ${ingredient.amount.value}`}
+                key={`${ingredient.name} ${ingredient.amount.value} ${ingredient.add}`}
             />
         ));
     }
