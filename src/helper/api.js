@@ -1,6 +1,7 @@
 import getStubFavoriteBeers from './getStubFavoriteBeers';
 
-const host = 'https://api.punkapi.com/v2/beers';
+// const host = 'https://api.punkapi.com/v2/beers';
+const host = 'http://localhost:3030';
 
 class Api {
     static async requestResponse(parameters) {
@@ -12,11 +13,11 @@ class Api {
     }
 
     static async getBeers(nextPage = 1, beersPerPage = 10) {
-        return this.requestResponse(`?page=${nextPage}&per_page=${beersPerPage}`);
+        return this.requestResponse(`/beers?page=${nextPage}&per_page=${beersPerPage}`);
     }
 
     static async getBeerById(id) {
-        return this.requestResponse(`/${id}`);
+        return this.requestResponse(`/beer?id=${id}`);
     }
 
     static async getFavoriteBeers(page, beersPerPage) {

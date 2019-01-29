@@ -1,0 +1,8 @@
+{
+    "host": "localhost",
+    "database": "beer_store",
+    "baseDatabase": "postgres",
+    "login": "postgres",
+    "password": "admin",
+    "port": 5432
+}
