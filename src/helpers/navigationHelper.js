@@ -1,6 +1,8 @@
-import history from './history';
-import ROUTES from '../../dict/routes';
-import {getSearchQuery} from '../parse';
+import {createBrowserHistory} from 'history';
+import {ROUTES} from '../constants/constants';
+import {getSearchQuery} from './parse';
+
+export const history = createBrowserHistory();
 
 let QUERY_PARAMS = getSearchQuery(window && window.location);
 

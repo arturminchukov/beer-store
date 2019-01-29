@@ -3,8 +3,8 @@ import SearchInput from '../SearchInput/SearchInput';
 import {InfiniteScroll} from '../InfiniteScroll/InfiniteScroll';
 import BeerList from '../BeerList/BeerList';
 import HeaderWrapper from '../HeaderWrapper/HeaderWrapper';
-import debouncedQueryNavigate from '../../helper/debounce';
-import {beerProperties} from '../../dict/alcoholProperties';
+import debouncedQueryNavigate from '../../helpers/debounce';
+import {BEER_PROPERTIES} from '../../constants/constants';
 import AdvancedFilter from '../AdvancedFilter/AdvancedFilter';
 
 export default class MainPage extends React.Component {
@@ -46,7 +46,8 @@ export default class MainPage extends React.Component {
                         onChange={this.onChange}
                         value={this.state.queryValue}
                     />
-                    {this.state.queryValue && <AdvancedFilter filterScales={beerProperties} query={this.props.query} />}
+                    {this.state.queryValue
+                    && <AdvancedFilter filterScales={BEER_PROPERTIES} query={this.props.query} />}
                     <InfiniteScroll
                         fetchNext={fetchNext}
                         next={next}

@@ -1,4 +1,4 @@
-import {queryNavigate} from './navigation/navigate';
+import {queryNavigate} from './navigationHelper';
 
 export function debounce(handler, waitTime) {
     let timer;

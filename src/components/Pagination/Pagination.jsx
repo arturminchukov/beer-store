@@ -10,8 +10,7 @@ export class Pagination extends React.Component {
     }
 
     generatePages(pageNumber) {
-        const pages = Array.from({length: pageNumber}, (x, i) => i + 1);
-        return pages;
+        return Array.from({length: pageNumber}, (x, i) => i + 1);
     }
 
     changePage(event) {
@@ -31,9 +30,9 @@ export class Pagination extends React.Component {
     }
 
     render() {
-        const {itemsCount, itemsPerPage, currentPage} = this.props;
-        this.pageNumber = Math.ceil(itemsCount / itemsPerPage);
-        const pages = this.generatePages(this.pageNumber);
+        const {countPages, currentPage} = this.props;
+        this.pageNumber = countPages;
+        const pages = this.generatePages(countPages);
 
         return (
             <div className='Pagination'>

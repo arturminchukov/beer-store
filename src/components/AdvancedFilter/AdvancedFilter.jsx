@@ -1,7 +1,7 @@
 import * as React from 'react';
 import './AdvancedFilter.css';
 import FilterSlider from '../FilterSlider/FilterSlider';
-import debouncedQueryNavigate from '../../helper/debounce';
+import debouncedQueryNavigate from '../../helpers/debounce';
 
 export default class AdvancedFilter extends React.Component {
     constructor(props) {

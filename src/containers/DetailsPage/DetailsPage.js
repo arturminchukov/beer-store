@@ -1,9 +1,9 @@
 import {connect} from 'react-redux';
 import DetailsPage from '../../components/DetailsPage/DetailsPage';
 import {fetchBeerById} from '../../actions/fetching';
-import {favoritesUpdate} from '../../actions/favoriteBeers';
-import getBeerIdFromState from '../../helper/getBeerIdFromState';
-import {checkFavorite} from '../../helper/filters';
+import {getBeerIdFromState} from '../../helpers/beerHelper';
+import {checkFavorite} from '../../helpers/filters';
+import {changeBeerFavoriteProperty} from '../../actions/beers';
 
 const stateToProps = (state) => {
     const beerId = getBeerIdFromState(state);
@@ -22,7 +22,7 @@ const stateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => ({
     fetchBeer: beerId => dispatch(fetchBeerById(beerId)),
-    favorite: beer => dispatch(favoritesUpdate(beer)),
+    favorite: beer => dispatch(changeBeerFavoriteProperty(beer)),
 });
 
 export default connect(stateToProps, mapDispatchToProps)(DetailsPage);

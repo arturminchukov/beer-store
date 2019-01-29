@@ -1,6 +1,5 @@
-import {updateFavoritesStorage} from '../helper/localStorage';
 import {FAVORITES_LOADED, FAVORITES_UPDATE} from '../actions/favoriteBeers';
-import beerArrayToObject from '../helper/transform/beerArrayToObject';
+import {beerArrayToObject} from '../helpers/transformHelper';
 
 const DEFAULT_ENTITIES = {
     items: {},
@@ -20,13 +19,8 @@ const favoriteBeers = (state, action) => {
             if (beers[newBeer.id]) {
                 delete beers[newBeer.id];
             } else {
-                beers[newBeer.id] = {
-                    ...newBeer,
-                    isFavorite: true,
-                };
+                beers[newBeer.id] = {...newBeer};
             }
-
-            updateFavoritesStorage(beers);
 
             return {
                 ...state,
