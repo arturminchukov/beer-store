@@ -1,6 +1,6 @@
-import api from '../helper/api';
+import api from '../helpers/api';
 import {beerLoaded, beerLoading, updateNextPage} from './beers';
-import getBeersPerPage from '../helper/getBeersPerPage';
+import {getBeersPerPage} from '../helpers/beerHelper';
 import {favoritesLoaded} from './favoriteBeers';
 
 export function fetchBeerById(beerId) {

@@ -1,6 +1,12 @@
-import {BEER_LOADING, BEERS_LOADED, BEERS_NEXT} from '../actions/beers';
-import beerArrayToObject from '../helper/transform/beerArrayToObject';
-import {filterBeers} from '../helper/filters';
+import {
+    BEER_LOADING,
+    BEERS_LOADED,
+    BEERS_NEXT,
+    CHANGE_BEER_FAVORITE_PROPERTY,
+} from '../actions/beers';
+import {beerArrayToObject} from '../helpers/transformHelper';
+import {filterBeers} from '../helpers/filters';
+import {updateFavoritesStorage} from '../helpers/localStorage';
 
 const DEFAULT_ENTITIES = {
     isLoading: false,
@@ -23,16 +29,38 @@ const beers = (state, action) => {
                 items: {...state.items, ...beerItems},
             };
         }
+
         case BEERS_NEXT:
             return {
                 ...state,
                 next: action.payload.next,
             };
+
         case BEER_LOADING:
             return {
                 ...state,
                 isLoading: action.payload.loading,
             };
+
+        case CHANGE_BEER_FAVORITE_PROPERTY: {
+            const stateBeers = Object.assign({}, state.items);
+            const newBeer = action.payload && action.payload.beer;
+
+            if (newBeer.isFavorite) {
+                newBeer.isFavorite = !newBeer.isFavorite;
+            } else {
+                newBeer.isFavorite = true;
+            }
+
+            stateBeers[newBeer.id] = {...newBeer};
+            updateFavoritesStorage(newBeer);
+
+            return {
+                ...state,
+                items: stateBeers,
+            };
+        }
+
         default:
             return state;
     }

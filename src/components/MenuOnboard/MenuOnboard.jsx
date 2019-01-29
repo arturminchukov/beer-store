@@ -1,7 +1,7 @@
 import * as React from 'react';
-import ROUTES from '../../dict/routes.json';
+import {ROUTES} from '../../constants/constants';
 import NavLink from '../NavLink/NavLink';
-import {navigate} from '../../helper/navigation/navigate';
+import {navigate} from '../../helpers/navigationHelper';
 
 class MenuOnboard extends React.Component {
     constructor(props) {

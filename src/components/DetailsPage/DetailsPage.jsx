@@ -5,8 +5,7 @@ import BeerIngredientList from '../BeerIngredientList/BeerIngredientList';
 import BeerPropertyList from '../BeerPropertyList/BeerPropertyList';
 import FoodPairing from '../FoodPairing/FoodPairing';
 import Header from '../Header/Header';
-import transformBeerProperties from '../../helper/transform/transformBeerProperties';
-import transformBeerIngredients from '../../helper/transform/transformBeerIngredients';
+import {transformBeerIngredients, transformBeerProperties} from '../../helpers/transformHelper';
 import Spinner from '../Spinner/Spinner';
 import './DetailsPage.css';
 

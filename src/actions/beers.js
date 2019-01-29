@@ -21,3 +21,11 @@ export const beerLoading = loadingStatus => ({
         loading: loadingStatus,
     },
 });
+
+export const CHANGE_BEER_FAVORITE_PROPERTY = 'CHANGE_BEER_FAVORITE_PROPERTY';
+export const changeBeerFavoriteProperty = beer => ({
+    type: CHANGE_BEER_FAVORITE_PROPERTY,
+    payload: {
+        beer,
+    },
+});

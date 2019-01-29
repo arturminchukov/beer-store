@@ -5,12 +5,12 @@ import {
     Route,
     Redirect,
 } from 'react-router-dom';
-import {parseLocation} from '../../helper/parse';
+import {parseLocation} from '../../helpers/parse';
 import MainPage from '../../containers/MainPage/MainPage';
 import FavoritesPage from '../../containers/FavoritesPage/FavoritesPage';
 import DetailsPage from '../../containers/DetailsPage/DetailsPage';
-import history from '../../helper/navigation/history';
-import ROUTES from '../../dict/routes';
+import {history} from '../../helpers/navigationHelper';
+import {ROUTES} from '../../constants/constants';
 
 class App extends Component {
     componentDidMount() {

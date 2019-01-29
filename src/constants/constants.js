@@ -1,4 +1,4 @@
-export const alcoholProperties = {
+export const ALCOHOL_PROPERTIES = {
     alcohol: {
         abbreviation: 'abv',
         name: 'alcohol',
@@ -25,4 +25,22 @@ export const alcoholProperties = {
     },
 };
 
-export const beerProperties = Object.values(alcoholProperties);
+export const BEER_PROPERTIES = Object.values(ALCOHOL_PROPERTIES);
+
+export const ROUTES = {
+    home: {
+        title: 'Home',
+        name: 'home',
+        iconName: 'home',
+        url: '/home',
+        items: 'beers',
+    },
+    favorites: {
+        title: 'Favorites',
+        name: 'favorites',
+        iconName: 'favorites',
+        url: '/favorites?page=1',
+        sourceUrl: '/favorites',
+        items: 'favoriteBeers',
+    },
+};
